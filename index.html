@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Formation HTML5 CSS3 - Javascript - JQUERY" />
+    <title>Formation HTML5 CSS3 - Javascript - JQUERY</title>
+    <!-- Partie des liens vers le CSS et les fichiers scripts js ou jquery  -->
+    <link rel="stylesheet" href="./css/style.css" />
+    <script src="./js/script.js"></script>
+</head>
+<body>
+    <header>
+        <h1>Formation HTML5 CSS3 - Javascript - JQUERY</h1>
+    </header>
+    <nav role="navigation">
+        <ul>
+            <li><a href="./index.html">Introduction</a></li>
+            <li><a href="./cssgrid.html">Grilles CSS</a></li>
+            <li><a href="./jsbase.html">JS bases</a></li>
+            <li><a href="./jsajax.html">JS Ajax</a></li>
+            <li><a href="./jquerybase.html">JQuery bases</a></li>
+            <li><a href="./jquerycss.html">JQuery CSS</a></li>
+            <li><a href="./jqueryajax.html">Jquery Ajax</a></li>
+        </ul>
+    </nav>
+    <main>
+        <section>
+            <h2>Problèmes CSS Courants</h2>
+            <p>
+                Le CSS par défaut des navigateur date des premiers navigateur, et est essentiellement utile pour de l'impression directe.
+            </p>
+            <p>
+                Ce CSS est inadapté sur beaucoup de niveaux
+            </p>
+            <ul>
+                <li>Le calcul des largeurs des éléments est basé sur le contenu des éléments et non pas l'extérieur des bordures des éléments</li>
+                <li>L'accessibilité, la police de caractère utilisée, avec empatement n'est pas accessible</li>
+                <li>La taille par défaut de la police n'est pas adaptée à la diffusion sur les appareils modernes (smartphone, tablettes, crans modernes)</li>
+                <li>L'interlignage n'est pas adapté (pour les supports cités précédemment)</li>
+            </ul>
+            <h3>Le calcul des largeur d'éléments</h3>
+            <p>
+                On change le comportement par défaut du navigateur <code>box-sizing: content-box</code> en intervenant sur tous les éléments de la page grâce au sélecteur <code>*</code>, indiquant la propriété suivante 
+                <code>box-sizing: border-box</code>
+            </p>
+            <p>
+                Les largeur des éléments se calculeront désormais depuis l'extérieur des bordures et non depuis la largeur du contenu de l'élément.
+            </p>
+            <h3>La police de caractère</h3>
+            <p>
+                Pour rendre une site accessible, il est préconisé d'utiliser 
+                une police de caractère sans empatement : <code>sans-serif</code>
+            </p>
+            <h3>La taille des polices</h3>
+            <p>
+                De base, les navigateur utilisent le cadratin <code>em</code> comme mesure pour les polices (et aussi pour les marges).
+            </p>
+            <p>
+                Le problème réside dans le fait que le em se calcul par rapport à la taille déclaré dans l'élément parent.
+            </p>
+            <div style="font-size: 2em;">
+                <p>
+                    <code>style="font-size: 2em;</code>
+                </p>
+                <div style="font-size: 2em;">
+                    <p>
+                        <code>style="font-size: 2em;</code>
+                    </p>
+                </div>
+            </div>
+            <p>
+                Pour remédier à cela, on va préferer utiliser le cadratin racine, son aventage : il se calcul par rapport à la taille de la police racine (<code>:root</code>)
+            </p>
+            <div style="font-size: 2rem;">
+                <p>
+                    <code>style="font-size: 2rem;</code>
+                </p>
+                <div style="font-size: 2rem;">
+                    <p>
+                        <code>style="font-size: 2rem;</code>
+                    </p>
+                </div>
+            </div>
+            <h3>L'interligne</h3>
+            <p>
+                De base l'interligne est trop petit sur les navigateur, il faudra l'augmenter pour rendre le contenu lisible, principalement pour les appareils avec un petit écran.
+            </p>
+        </section>
+        <section>
+            <h2>Balises de contenu</h2>
+        </section>
+        <section>
+            <h2>Balise mise en forme du texte</h2>
+        </section>
+        <section>
+            <h2>Les tableaux HTML</h2>
+        </section>
+        <section>
+            <h2>Les images</h2>
+        </section>
+        <section>
+            <h2>Les media</h2>
+        </section>
+        <section>
+            <h2>Les formulaires</h2>
+        </section>
+    </main>
+    <footer>
+
+    </footer>
+</body>
+</html>

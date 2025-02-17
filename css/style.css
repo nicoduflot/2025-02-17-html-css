@@ -1,0 +1,19 @@
+/* déclaration de surcharge de la racine du css */
+
+:root{
+    --font-content: Arial, Helvetica, sans-serif;
+    --font-title: cambria, serif;
+    font-family: var(--font-content);
+    font-size: 1.3rem;
+    line-height: 1.7rem;
+}
+
+/* déclaration générale de "mise à niveau" du css */
+*{
+    box-sizing: border-box;
+}
+
+h1, h2, h3, h4, h5, h6{
+    font-family: var(--font-title);
+    margin: 0;
+}
