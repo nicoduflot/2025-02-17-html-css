@@ -44,7 +44,8 @@
                     Ce CSS est inadapté sur beaucoup de niveaux
                 </p>
                 <ul>
-                    <li>Le calcul des largeurs des éléments est basé sur le contenu des éléments et non pas l'extérieur des
+                    <li>Le calcul des largeurs des éléments est basé sur le contenu des éléments et non pas l'extérieur
+                        des
                         bordures des éléments</li>
                     <li>L'accessibilité, la police de caractère utilisée, avec empatement n'est pas accessible</li>
                     <li>La taille par défaut de la police n'est pas adaptée à la diffusion sur les appareils modernes
@@ -53,7 +54,8 @@
                 </ul>
                 <h3>Le calcul des largeur d'éléments</h3>
                 <p>
-                    On change le comportement par défaut du navigateur <code>box-sizing: content-box</code> en intervenant
+                    On change le comportement par défaut du navigateur <code>box-sizing: content-box</code> en
+                    intervenant
                     sur tous les éléments de la page grâce au sélecteur <code>*</code>, indiquant la propriété suivante
                     <code>box-sizing: border-box</code>
                 </p>
@@ -68,7 +70,8 @@
                 </p>
                 <h3>La taille des polices</h3>
                 <p>
-                    De base, les navigateur utilisent le cadratin <code>em</code> comme mesure pour les polices (et aussi
+                    De base, les navigateur utilisent le cadratin <code>em</code> comme mesure pour les polices (et
+                    aussi
                     pour les marges).
                 </p>
                 <p>
@@ -117,14 +120,16 @@
                 </p>
                 <p>
                     De type paragraphes, c'est à dire qu'elle représente un paragraphe de texte, un "entité" unique de
-                    contenu, elle sont de type <code>block</code>, c'est à dire qu'elle prennent toute la largeur disponible
+                    contenu, elle sont de type <code>block</code>, c'est à dire qu'elle prennent toute la largeur
+                    disponible
                     et si on les enchaîne elle apparaissent les unes au dessus des autres.
                 </p>
                 <p>
                     soit :
                 </p>
                 <p>
-                    De type <code>inline</code>, elle sont souvent intégrée dans un élément de type paragraphe pour ajouter
+                    De type <code>inline</code>, elle sont souvent intégrée dans un élément de type paragraphe pour
+                    ajouter
                     un style a une partie du texte
                 </p>
                 <h3>Type block</h3>
@@ -132,11 +137,13 @@
                     <code>&lt;p&gt;</code> : balise paragraphe par défaut
                 </p>
                 <blockquote>
-                    <code>&lt;blockquote&gt;</code> : balise de citation, ajoute des marges extérieures sur les côtés afin
+                    <code>&lt;blockquote&gt;</code> : balise de citation, ajoute des marges extérieures sur les côtés
+                    afin
                     de mettre en exergue sont contenu, généralement une citation
                 </blockquote>
                 <p>
-                    <code>&lt;blockquote&gt;</code> utilise généralement d'autres balises pour créer une citation correcte
+                    <code>&lt;blockquote&gt;</code> utilise généralement d'autres balises pour créer une citation
+                    correcte
                     visuellement ET sémantiquement pour le référencement.
                 </p>
                 <blockquote>
@@ -155,11 +162,13 @@
                     élément de type paragraphe.
                 </p>
                 <p>
-                    Le gras et l'italique peuvent chacune être représentés par deux balise, qui visuellement rendent le même
+                    Le gras et l'italique peuvent chacune être représentés par deux balise, qui visuellement rendent le
+                    même
                     résultat, mais dont l'impact en référencement sera différent.
                 </p>
                 <p>
-                    Pour ne pas impacter le référencement, on utilisera <b><code>&lt;b&gt;</code></b> (<code>bold</code>)
+                    Pour ne pas impacter le référencement, on utilisera <b><code>&lt;b&gt;</code></b>
+                    (<code>bold</code>)
                     pour le gras et <i><code>&lt;i&gt;</code></i> (<code>italic</code>) pour l'italique.
                 </p>
                 <p>
@@ -168,7 +177,8 @@
                     <em><code>&lt;em&gt;</code></em> (<code>emphasis</code>) pour l'italique.
                 </p>
                 <p>
-                    Pour changer l'apparence du texte, on peut <s>biffer</s>, <u>souligner</u> (<b>ATTENTION : par défaut,
+                    Pour changer l'apparence du texte, on peut <s>biffer</s>, <u>souligner</u> (<b>ATTENTION : par
+                        défaut,
                         ON NE SOULIGNE PAS LE TEXTE EN WEB : pour ne pas le confondre avec les liens</b>), passer un
                     <mark>marqueur fluo</mark>, écrire des formules chimiques : H<sub>2</sub>SO<sub>4</sub><sup>2-</sup>
                 </p>
@@ -181,8 +191,10 @@
                     }
                 </style>
                 <p>
-                    La balise <code>&lt;font&gt;</code> servait a <font face="cambria" size="6" color="darkred">changer la
-                        police, la taille et la couleur</font> d'un morceau de texte mais la balise, même si elle est encore
+                    La balise <code>&lt;font&gt;</code> servait a <font face="cambria" size="6" color="darkred">changer
+                        la
+                        police, la taille et la couleur</font> d'un morceau de texte mais la balise, même si elle est
+                    encore
                     interprétée par les navigateurs n'est plus a utiliser. On utilisera à la place une balise
                     <code>&lt;span&gt;</code> <span class="not-font">à une classe CSS pour faire ces changements.</span>
                 </p>
@@ -192,7 +204,8 @@
             <article>
                 <h2 id="special">Les tableaux HTML</h2>
                 <p>
-                    Les tableaux ne doivent servir qu'a afficher des données ou des résultats, JAMAIS à faire de la mise en
+                    Les tableaux ne doivent servir qu'a afficher des données ou des résultats, JAMAIS à faire de la mise
+                    en
                     page.
                 </p>
                 <p>
@@ -298,31 +311,42 @@
             <article>
                 <h2>Les images</h2>
                 <p>
-                    La balise de base pour appeler une image <code>&lt;img /&gt;</code>. Il faut au minimum l'attribut <code>src</code> qui indique la source de l'image chargée.
+                    La balise de base pour appeler une image <code>&lt;img /&gt;</code>. Il faut au minimum l'attribut
+                    <code>src</code> qui indique la source de l'image chargée.
                 </p>
                 <p>
-                    En accessibilité, il faudra ajouter l'attribut <code>alt</code>, c'est un texte alternatif qui doit décrire l'image. Si il s'agit d'une image de décoration, on laisse l'attribut vide.
+                    En accessibilité, il faudra ajouter l'attribut <code>alt</code>, c'est un texte alternatif qui doit
+                    décrire l'image. Si il s'agit d'une image de décoration, on laisse l'attribut vide.
                 </p>
                 <img src="" alt="petit chien mignon" width="200" height="200" />
                 <p>
-                    En référencement, alt est important, ainsi que le nom du fichier image. Si on veut capitaliser sur une image et l'associer à une légende qui améliorera sont référencement, il est important de l'encapsuler dans une balise <code>&lt;figure&gt;</code>
+                    En référencement, alt est important, ainsi que le nom du fichier image. Si on veut capitaliser sur
+                    une image et l'associer à une légende qui améliorera sont référencement, il est important de
+                    l'encapsuler dans une balise <code>&lt;figure&gt;</code>
                 </p>
-                <h3>Figure</h3>
+            </article>
+            <article>
+                <h2>Figure</h2>
                 <p>
                     Figure est une balise qui permet d'associer une légende à une image
                 </p>
                 <figure>
                     <img src="./images/huitieme-couleur.jpg" alt="Couverture du roman la huitième couleur" />
                     <figcaption>
-                        Le premier roman de Terry Pratchett, la huitième couleur, lance l'anthologie des annales du Disque-Monde.
+                        Le premier roman de Terry Pratchett, la huitième couleur, lance l'anthologie des annales du
+                        Disque-Monde.
                     </figcaption>
                 </figure>
                 <p>
-                    Le fait d'indiquer que par défaut toutes les images s'affiche jusqu'au maximum de leur largeur permet d'éviter les débordements lorsqu'on les affiche sur un écran plus petit que leur largeur.
+                    Le fait d'indiquer que par défaut toutes les images s'affiche jusqu'au maximum de leur largeur
+                    permet d'éviter les débordements lorsqu'on les affiche sur un écran plus petit que leur largeur.
                 </p>
-                <h3>Picture</h3>
+            </article>
+            <article>
+                <h2>Picture</h2>
                 <p>
-                    En adaptatif, on peut ajouter à la largeur maximale la performance d'affiche ( = rapidité) le choix de la meilleure image adaptée à la largeur de l'écran, avec <code>&lt;picture&gt;</code>
+                    En adaptatif, on peut ajouter à la largeur maximale la performance d'affiche ( = rapidité) le choix
+                    de la meilleure image adaptée à la largeur de l'écran, avec <code>&lt;picture&gt;</code>
                 </p>
                 <figure>
                     <picture>
@@ -331,17 +355,20 @@
                         <img src="./images/doc-signal-200w.png" alt="Portrait synthwave de Doc Brown" />
                     </picture>
                     <figcaption>
-                        L'artiste James White produit des oeuvres dans le courant synthwave, fantasme graphique des année 80, relatif aux posters de film et aux néons fluo.
+                        L'artiste James White produit des oeuvres dans le courant synthwave, fantasme graphique des
+                        année 80, relatif aux posters de film et aux néons fluo.
                     </figcaption>
                 </figure>
             </article>
         </section>
         <section>
-            <article>
+            <header>
                 <h2>Les media</h2>
                 <p>
                     On parle ici en pluse des images, de l'audio et la vidéo.
                 </p>
+            </header>
+            <article>
                 <h3>L'audio hébergé sur le site</h3>
                 <figure class="audio">
                     <img src="/images/diablo_02.jpg" />
@@ -355,6 +382,8 @@
                         <button id="plauseAudio" data-target="lecteur">Pause</button>
                     </figcaption>
                 </figure>
+            </article>
+            <article>
                 <h3>La vidéo hébergée sur le site</h3>
                 <figure>
                     <video controls id="lecteur-video">
@@ -367,33 +396,91 @@
                         <source src="./media/video/Big_Buck_Bunny_360_10s_1MB.mp4" type="video/mp4" />
                     </video>
                 </figure>
-                <h3>Les média partagés par d'autres site</h3>
+            </article>
+        </section>
+        <section>
+            <header>
+                <h2>Les média partagés par d'autres site</h2>
                 <p>
-                    Tous les média audio, vidéos et posts type bluesky, facebook, etc que l'on peut partager sont en fait l'inclusion dans la page d'iframes
+                    Tous les média audio, vidéos et posts type bluesky, facebook, etc que l'on peut partager sont en
+                    fait l'inclusion dans la page d'iframes
                 </p>
                 <p>
                     Les iframes sont des cadres qui appelent des pages partageables qui viennent d'autre sites.
                 </p>
-                <h4>la vidéo</h4>
-                <h5>Youtube</h5>
-                <iframe width="560" height="315" src="https://www.youtube.com/embed/ScaWF4gEK3c?si=jpuf6OWRp0U31rgs" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-                <h5>Le problème de l'adaptatif</h5>
+            </header>
+            <article>
+                <h3>la vidéo</h3>
+                <h4>Youtube</h4>
+                <iframe width="560" height="315" src="https://www.youtube.com/embed/ScaWF4gEK3c?si=jpuf6OWRp0U31rgs"
+                    title="YouTube video player" frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                <h4>Le problème de l'adaptatif</h4>
                 <p>
-                    Youtube ne propose pas par défaut une iframe adaptative, il faudra créer soit-même le CSS pour rendre la vidéo adaptative.
+                    Youtube ne propose pas par défaut une iframe adaptative, il faudra créer soit-même le CSS pour
+                    rendre la vidéo adaptative.
                 </p>
-                <h5>Dailymotion</h5>
+                <h4>Dailymotion</h4>
                 <p>
                     Dailymotion apporte une solution adaptative par défaut
                 </p>
-                <div style="position:relative;padding-bottom:56.25%;height:0;overflow:hidden;">
-                    <iframe src="https://geo.dailymotion.com/player.html?video=x2fkhd"
-                      style="width:100%; height:100%; position:absolute; left:0px; top:0px; overflow:hidden; border:none;"
-                      allowfullscreen
-                      title="Dailymotion Video Player"
-                      allow="web-share">
+                <figure class="media-ratio ratio-16-9">
+                    <iframe src="https://geo.dailymotion.com/player.html?video=x2fkhd" allowfullscreen
+                        title="Dailymotion Video Player" allow="web-share">
                     </iframe>
-                  </div>
-                    <h4>L'audio</h4>
+                </figure>
+                <figure class="media-ratio ratio-21-9">
+                    <iframe src="https://geo.dailymotion.com/player.html?video=x2fkhd" allowfullscreen
+                        title="Dailymotion Video Player" allow="web-share">
+                    </iframe>
+                </figure>
+                <figure class="media-ratio ratio-portrait">
+                    <iframe src="https://geo.dailymotion.com/player.html?video=x2fkhd" allowfullscreen
+                        title="Dailymotion Video Player" allow="web-share">
+                    </iframe>
+                </figure>
+            </article>
+            <article>
+                <h3>Les iframes</h3>
+                <p>
+                    Un document en portrait
+                </p>
+                <ul>
+                    <li><a href="./documents/A4-portrait-hex-0.5-inches-paper.pdf" target="documents">Feuille
+                            d'héxagones</a></li>
+                    <li><a href="./documents/books.xml" target="documents">XML books</a></li>
+                    <li><a href="./documents/fichier.txt" target="documents">Fichier txt</a></li>
+                    <li><a href="./documents/uxpin_web_ui_design_for_the_human_eye_1.pdf" target="documents">Design for
+                            human eye</a></li>
+                </ul>
+                <figure class="media-ratio ratio-portrait">
+                    <iframe name="documents" src="./documents/CRAM.pdf"></iframe>
+                </figure>
+            </article>
+            <header>
+                <h2>L'audio</h2>
+                <p>
+                    Les sites qui partagent de l'audio gère déjà pour la plupart l'adaptatif, en utilisant aussi les
+                    iframes.
+                </p>
+            </header>
+            <article>
+                <h3>soundcloud</h3>
+                <iframe width="100%" height="450" scrolling="no" frameborder="no" allow="autoplay"
+                    src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/playlists/243792766&color=%23e82179&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true"></iframe>
+                <div
+                    style="font-size: 10px; color: #cccccc;line-break: anywhere;word-break: normal;overflow: hidden;white-space: nowrap;text-overflow: ellipsis; font-family: Interstate,Lucida Grande,Lucida Sans Unicode,Lucida Sans,Garuda,Verdana,Tahoma,sans-serif;font-weight: 100;">
+                    <a href="https://soundcloud.com/nirvana" title="Nirvana" target="_blank"
+                        style="color: #cccccc; text-decoration: none;">Nirvana</a> · <a
+                        href="https://soundcloud.com/nirvana/sets/bleach-deluxe-edition" title="Bleach (Deluxe Edition)"
+                        target="_blank" style="color: #cccccc; text-decoration: none;">Bleach (Deluxe Edition)</a>
+                </div>
+                <h3>bandcamp</h3>
+                <iframe style="border: 0; width: 400px; height: 120px;"
+                    src="https://bandcamp.com/EmbeddedPlayer/album=3828771716/size=large/bgcol=333333/linkcol=e99708/tracklist=false/artwork=small/transparent=true/"
+                    seamless><a href="https://weswaltz.bandcamp.com/album/more-is-more">More Is More de Wes
+                        Waltz</a></iframe>
             </article>
         </section>
         <section>

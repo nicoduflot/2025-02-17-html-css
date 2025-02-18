@@ -234,6 +234,40 @@ table.dark :not(tbody) tr > *:not(:last-child){
     border-right-color: var(--dark-table-headers-border-color);
 }
 
+/* classes pour les ratio d'affichge media adaptatif */
+.media-ratio{
+    position:relative;
+    height:0;
+    overflow:hidden;
+}
+
+.media-ratio > *{
+    width:100%; 
+    height:100%; 
+    position:absolute; 
+    left:0px; 
+    top:0px; 
+    overflow:hidden; 
+    border:none;
+}
+
+
+.ratio-portrait{
+    padding-bottom: 141.42%;
+}
+
+.ratio-16-9{
+    padding-bottom:56.25%;
+}
+
+.ratio-21-9{
+    padding-bottom:42.85%;
+}
+
+.max-600 > *{
+    max-width: 600px;
+}
+
 /* déclaration selon la structure de la page */
 body > header,
 body > nav,
