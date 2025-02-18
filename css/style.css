@@ -1,3 +1,150 @@
+/*
+CSS : Cascading Style Sheet ou feuille de style en cascade
+
+Quand on écrit du CSS, on pense D.R.Y. : Don't Repeat Yourself
+
+Cascade : ce qui est déclaré dans une balise qui contient d'autre balises, est appliqué à la balise et par défaut à toutes les balises qu'elle contient.
+
+Pour appliquer du style CSS à une partie de la page, il faut : 
+- désigner la partie en utlisant un sélecteur CSS
+- décrire la ou les propriétés CSS et leur configuration
+
+selecteur{
+    propriété: valeur(s);
+    propriété: valeur(s);
+}
+
+Unités de tailles en CSS
+
+Unités les plus souvent utilisées en web
+
+px      =>  pixel il est possible de mesure avec des virgule, 23.8px)
+em      =>  cadratin. Historiquement unité de mesure en print sur les presses.
+            Le cadratin se calcul par rapport à la taille du parent
+rem     =>  cadratin racine, lui se calculera toujours depuis la taille racine du cadratin, 
+            - soit celle du navigateur 
+            - soit celle surchargée dans le :root
+%       =>  La taille définie en % se calcule par rapport à l'espace disponible autour de l'élément définie en %
+vw & vh =>  vw : viewport width (largeur de la surface d'affichage du site)
+            vh : viewport height ( hauteur d'affichage du site)
+            50vh => 50% de la taille d'affichage du site
+            si la largeur d'affichage du site 360px (100vw)
+            50vw = 180px
+
+sélecteur CSS :
+    ATTENTION : en CSS, on impacte tous les éléments correspondants aux sélecteurs écrits
+    
+    sélecteurs simples : balise, identifiant et par classe
+        p                   => tous les éléments p rencontrés dans le document
+                            pas de caractère spécial devant l'élément donc il s'agit d'une balise
+        #special            => l'élément ayant comme attribut id="special"
+                            le caractère # indique qu'on se réfère à l'id
+                            #Les-balises-de-contenu-texte{}
+                            => les id sont uniques dans la page
+        .titreDeChapitre    => les éléments ayant au moins la class="titreDeChapitre" 
+                            le caractère . indique qu'on se réfère à une classe
+                            => ATTENTION : si un élément class="titreDeChapitre toto tata" comme il possède au moins
+                            la classe titreDeChapitre alors il sera trouvé
+    Sélecteur avancés : selon les attributs                                  
+        [data-test]                     => les éléments ayant au moins un attribut nommé data-test
+                                        <span data-test="tata"></span>
+                                        <span data-test="toto"></span>
+                                        => les deux sont impacté, on ne recherche que l'attribut
+        [alt]                           => les éléments ayant au moins un attribut alt
+        [data-test="toto"]              => les éléments ayant au moins un attribut nommé data-test="toto"
+                                        <span data-test="tata"></span> => ça ne marche pas, la valeur de test est tata
+                                        <span data-test="toto"></span> => ça fonctionne car la valeur de test et toto
+                                        seul l'élément dont l'attribut data-test est égal à toto sera impacté
+        [data-col][data-line]           => les éléments ayant au moins un attribut data-col ET un attribut data-line
+        [data-col="3"][data-line]       => les éléments ayant au moins un attribut data-col="3" ET un attribut data-line
+        [data-col][data-line="2"]       => les éléments ayant au moins un attribut data-col ET un attribut data-line="2"
+        [data-col="3"][data-line="2"]   => les éléments ayant au moins un attribut data-col="3" ET un attribut data-line="2"
+
+    Sélecteur avancés : mélange des sélecteurs simples et ou de sélecteurs avancés
+
+        h3.titreDeChapitre  => tous les titre h3 ayant la classe titreDeChapitre <h3 class="titreDeChapitre"></h3>
+                            si l'élément et la classe sont collés, c'est que l'élément doit avoir au moins cette classe
+        article #special    => un élément avec id="special" enfant direct OU indirect d'un élément article
+                            si l'élément et l'id recherché sont séparés, cela indique une filiation directe ou indirecte
+                            <article>
+                                <div>
+                                    <div id="special"></div>
+                                </div>
+                            </article>
+
+                            <article>
+                                <div id="special"></div>
+                            </article>
+
+                            <article>
+                                <div>
+                                    <div>
+                                        <div id="special"></div>
+                                    </div>
+                                </div>
+                            </article>
+
+        article > p            => tous les éléments p enfants directs d'un élément article
+                            le chevron fermant > entre les deux éléments indique une filiation directe.
+                            <article>
+                                <p>P est lenfant direct de article, ça marche</p>
+                            </article>
+
+                            /!\ ça ne marche pas : 
+                            <article>
+                                <div>
+                                    <p>p a au moins une balise entre lui et article : ça ne marche pas</p>
+                                </div>
+                            </article>
+        p#special           => un élément p avec id="special"
+                            <p id="special"></p>
+        .toto.tata          => un élément ayant au moins les deux classes suivantes toto et tata
+                            <p class="toto tata"></p>
+        .toto .tata         => un élément ayant au moins la classe tata enfant direct ou indirect d'un élément ayant au moins la classe toto
+                            <p class="toto">
+                                <span>
+                                    <span class="tata">
+                                        c'est lui
+                                    </span>
+                                <span>
+                            </p>
+                            
+                            <p class="toto">
+                                <span class="tata">
+                                    c'est lui
+                                <span>
+                            </p>
+        .toto > .tata       => un élément ayant au moins la classe tata enfant direct d'un élément ayant au moins la classe toto
+
+                            <p class="toto">
+                                <span>
+                                    <span class="tata">
+                                        c'est pas lui il n'est pas enfant direct de .toto
+                                    </span>
+                                <span>
+                            </p>
+
+                            <p class="toto">
+                                <span class="tata">
+                                    c'est lui, enfant direct de .toto
+                                <span>
+                            </p>
+    
+    
+    Pseudo sélecteurs (sélécteur qui permet des "tri" ou des "filtres" sur des sélecteurs )
+
+        p:nth-of-type(odd)  => tous les paragraphes du document en position impaire
+                            nth-child() le(s) nième(s) enfant(s)
+                            les paramètres : 
+                                odd => impaire - event => paire, Xn => tous les X enfants , Y => le Yème
+                                Xn + Y, si X == 2 et Y == 1 ==> 2n+1
+
+        article:last-child:nth-of-type(4n+3)    => l'article doit être le dernier article et le troisième article d'une ligne de 4
+                                                paramètres :    4n => le nombre d'élément par ligne
+                                                                +3 => le troisième de la ligne
+
+*/
+
 /* déclaration de surcharge de la racine du css */
 
 :root{
@@ -6,6 +153,22 @@
     font-family: var(--font-content);
     font-size: 1.3rem;
     line-height: 1.7rem;
+    /* couleur du site */
+    --site-color: black;
+    --site-bg-color: #D9D8D7;
+    --site-title-color: #D93B48;
+    --site-link-color: #F2B807;
+    --site-header-color: #F28B0C;
+    --site-nav-color: var(--site-header-color);
+    --site-nav-link-color: var(--site-color);
+    /* couleur par défaut des tableaux */
+    --default-table-border-color: black;
+    --dark-table-bg-color: #333;
+    --dark-table-striped-bg-color: #555;
+    --dark-table-font-color: white;
+    --dark-table-headers-bg-color: black;
+    --dark-table-headers-border-color: #ddd;
+    --gutter-x: 0.5rem;
 }
 
 /* déclaration générale de "mise à niveau" du css */
@@ -13,7 +176,91 @@
     box-sizing: border-box;
 }
 
+body{
+    margin: 0;
+    background-color: var(--site-bg-color);
+}
+
 h1, h2, h3, h4, h5, h6{
     font-family: var(--font-title);
     margin: 0;
+}
+
+/* déclarations générale */
+
+a{
+    color: var(--site-link-color);
+}
+
+img,
+video{
+    max-width: 100%;
+}
+
+/* exemple sélecteur # */
+#special{
+    /* l'élément dans la page yant l'id="special" */
+    font-family: 'Arial Narrow Bold', sans-serif;
+}
+
+/* classe pour rendre le tableau adaptatif */
+.table-rwd{
+    overflow-x: auto;
+}
+
+table{
+    border-collapse: collapse;
+}
+
+table th, table td{
+    border: 1px solid var(--default-table-border-color);
+    padding: var(--gutter-x);
+}
+
+table.dark{
+    background-color: var(--dark-table-bg-color);
+    color: var(--dark-table-font-color);
+}
+
+table.dark thead, table.dark tfoot{
+    background-color: var(--dark-table-headers-bg-color);
+}
+
+table.dark.striped tbody tr:nth-of-type(odd){
+    background-color: var(--dark-table-striped-bg-color);
+}
+
+table.dark :not(tbody) tr > *:not(:last-child){
+    border-right-color: var(--dark-table-headers-border-color);
+}
+
+/* déclaration selon la structure de la page */
+body > header,
+body > nav,
+body > footer{
+    background-color: var(--site-header-color);
+}
+
+body > nav ul{
+    margin: 0;
+}
+
+body > nav a,
+body > footer a{
+    color: var(--site-nav-link-color);
+}
+
+body > footer{
+    padding: 1rem 0;
+}
+
+main article{
+    padding: var(--gutter-x);
+}
+
+body > header > *,
+body > nav > *,
+body > footer > *{
+    padding-left:var(--gutter-x) ;
+    padding-right:var(--gutter-x) ;
 }

@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="fr">
+
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -9,105 +10,403 @@
     <link rel="stylesheet" href="./css/style.css" />
     <script src="./js/script.js"></script>
 </head>
+
 <body>
     <header>
-        <h1>Formation HTML5 CSS3 - Javascript - JQUERY</h1>
+        <div>
+            <h1>Formation HTML5 CSS3 - Javascript - JQUERY</h1>
+        </div>
     </header>
     <nav role="navigation">
-        <ul>
-            <li><a href="./index.html">Introduction</a></li>
-            <li><a href="./cssgrid.html">Grilles CSS</a></li>
-            <li><a href="./jsbase.html">JS bases</a></li>
-            <li><a href="./jsajax.html">JS Ajax</a></li>
-            <li><a href="./jquerybase.html">JQuery bases</a></li>
-            <li><a href="./jquerycss.html">JQuery CSS</a></li>
-            <li><a href="./jqueryajax.html">Jquery Ajax</a></li>
-        </ul>
+        <div>
+            <ul>
+                <li><a href="./index.html">Introduction</a></li>
+                <li><a href="./cssgrid.html">Grilles CSS</a></li>
+                <li><a href="./jsbase.html">JS bases</a></li>
+                <li><a href="./jsajax.html">JS Ajax</a></li>
+                <li><a href="./jquerybase.html">JQuery bases</a></li>
+                <li><a href="./jquerycss.html">JQuery CSS</a></li>
+                <li><a href="./jqueryajax.html">Jquery Ajax</a></li>
+            </ul>
+        </div>
     </nav>
     <main>
         <section>
-            <h2>Problèmes CSS Courants</h2>
-            <p>
-                Le CSS par défaut des navigateur date des premiers navigateur, et est essentiellement utile pour de l'impression directe.
-            </p>
-            <p>
-                Ce CSS est inadapté sur beaucoup de niveaux
-            </p>
-            <ul>
-                <li>Le calcul des largeurs des éléments est basé sur le contenu des éléments et non pas l'extérieur des bordures des éléments</li>
-                <li>L'accessibilité, la police de caractère utilisée, avec empatement n'est pas accessible</li>
-                <li>La taille par défaut de la police n'est pas adaptée à la diffusion sur les appareils modernes (smartphone, tablettes, crans modernes)</li>
-                <li>L'interlignage n'est pas adapté (pour les supports cités précédemment)</li>
-            </ul>
-            <h3>Le calcul des largeur d'éléments</h3>
-            <p>
-                On change le comportement par défaut du navigateur <code>box-sizing: content-box</code> en intervenant sur tous les éléments de la page grâce au sélecteur <code>*</code>, indiquant la propriété suivante 
-                <code>box-sizing: border-box</code>
-            </p>
-            <p>
-                Les largeur des éléments se calculeront désormais depuis l'extérieur des bordures et non depuis la largeur du contenu de l'élément.
-            </p>
-            <h3>La police de caractère</h3>
-            <p>
-                Pour rendre une site accessible, il est préconisé d'utiliser 
-                une police de caractère sans empatement : <code>sans-serif</code>
-            </p>
-            <h3>La taille des polices</h3>
-            <p>
-                De base, les navigateur utilisent le cadratin <code>em</code> comme mesure pour les polices (et aussi pour les marges).
-            </p>
-            <p>
-                Le problème réside dans le fait que le em se calcul par rapport à la taille déclaré dans l'élément parent.
-            </p>
-            <div style="font-size: 2em;">
+            <article>
+                <header>
+                    <h2>Problèmes CSS Courants</h2>
+                </header>
                 <p>
-                    <code>style="font-size: 2em;</code>
+                    Le CSS par défaut des navigateur date des premiers navigateur, et est essentiellement utile pour de
+                    l'impression directe.
                 </p>
-                <div style="font-size: 2em;">
+                <p>
+                    Ce CSS est inadapté sur beaucoup de niveaux
+                </p>
+                <ul>
+                    <li>Le calcul des largeurs des éléments est basé sur le contenu des éléments et non pas l'extérieur des
+                        bordures des éléments</li>
+                    <li>L'accessibilité, la police de caractère utilisée, avec empatement n'est pas accessible</li>
+                    <li>La taille par défaut de la police n'est pas adaptée à la diffusion sur les appareils modernes
+                        (smartphone, tablettes, crans modernes)</li>
+                    <li>L'interlignage n'est pas adapté (pour les supports cités précédemment)</li>
+                </ul>
+                <h3>Le calcul des largeur d'éléments</h3>
+                <p>
+                    On change le comportement par défaut du navigateur <code>box-sizing: content-box</code> en intervenant
+                    sur tous les éléments de la page grâce au sélecteur <code>*</code>, indiquant la propriété suivante
+                    <code>box-sizing: border-box</code>
+                </p>
+                <p>
+                    Les largeur des éléments se calculeront désormais depuis l'extérieur des bordures et non depuis la
+                    largeur du contenu de l'élément.
+                </p>
+                <h3>La police de caractère</h3>
+                <p>
+                    Pour rendre une site accessible, il est préconisé d'utiliser
+                    une police de caractère sans empatement : <code>sans-serif</code>
+                </p>
+                <h3>La taille des polices</h3>
+                <p>
+                    De base, les navigateur utilisent le cadratin <code>em</code> comme mesure pour les polices (et aussi
+                    pour les marges).
+                </p>
+                <p>
+                    Le problème réside dans le fait que le em se calcul par rapport à la taille déclaré dans l'élément
+                    parent.
+                </p>
+                <div style="font-size: 2em; word-break:break-all;">
                     <p>
                         <code>style="font-size: 2em;</code>
                     </p>
+                    <div style="font-size: 2em;">
+                        <p>
+                            <code>style="font-size: 2em;</code>
+                        </p>
+                    </div>
                 </div>
-            </div>
-            <p>
-                Pour remédier à cela, on va préferer utiliser le cadratin racine, son aventage : il se calcul par rapport à la taille de la police racine (<code>:root</code>)
-            </p>
-            <div style="font-size: 2rem;">
                 <p>
-                    <code>style="font-size: 2rem;</code>
+                    Pour remédier à cela, on va préferer utiliser le cadratin racine, son aventage : il se calcul par
+                    rapport à la taille de la police racine (<code>:root</code>)
                 </p>
-                <div style="font-size: 2rem;">
+                <div style="font-size: 2rem; word-break:break-all;">
                     <p>
                         <code>style="font-size: 2rem;</code>
                     </p>
+                    <div style="font-size: 2rem;">
+                        <p>
+                            <code>style="font-size: 2rem;</code>
+                        </p>
+                    </div>
                 </div>
-            </div>
-            <h3>L'interligne</h3>
-            <p>
-                De base l'interligne est trop petit sur les navigateur, il faudra l'augmenter pour rendre le contenu lisible, principalement pour les appareils avec un petit écran.
-            </p>
+                <h3>L'interligne</h3>
+                <p>
+                    De base l'interligne est trop petit sur les navigateur, il faudra l'augmenter pour rendre le contenu
+                    lisible, principalement pour les appareils avec un petit écran.
+                </p>
+            </article>
         </section>
         <section>
-            <h2>Balises de contenu</h2>
+            <article>
+                <h2>Balises de contenu</h2>
+                <p>
+                    Généralement, les textes doivent être intégrés dans des paragraphes <code>&lt;p&gt;</code>.
+                </p>
+                <p>
+                    Les balises contenant du texte sont soit :
+                </p>
+                <p>
+                    De type paragraphes, c'est à dire qu'elle représente un paragraphe de texte, un "entité" unique de
+                    contenu, elle sont de type <code>block</code>, c'est à dire qu'elle prennent toute la largeur disponible
+                    et si on les enchaîne elle apparaissent les unes au dessus des autres.
+                </p>
+                <p>
+                    soit :
+                </p>
+                <p>
+                    De type <code>inline</code>, elle sont souvent intégrée dans un élément de type paragraphe pour ajouter
+                    un style a une partie du texte
+                </p>
+                <h3>Type block</h3>
+                <p>
+                    <code>&lt;p&gt;</code> : balise paragraphe par défaut
+                </p>
+                <blockquote>
+                    <code>&lt;blockquote&gt;</code> : balise de citation, ajoute des marges extérieures sur les côtés afin
+                    de mettre en exergue sont contenu, généralement une citation
+                </blockquote>
+                <p>
+                    <code>&lt;blockquote&gt;</code> utilise généralement d'autres balises pour créer une citation correcte
+                    visuellement ET sémantiquement pour le référencement.
+                </p>
+                <blockquote>
+                    <p>
+                        <q cite="https://fr.wikiquote.org/wiki/Terry_Pratchett#Au_guet_!,_1989">Si les clichés
+                            deviennent des clichés, c'est qu'ils sont les marteaux et les tournevis dans la boîte à
+                            outils de la communication.</q>
+                    </p>
+                    <p>
+                        <cite>Au guet ! (1989), Terry Pratchett (trad. Patrick Couton), éd. L'Atalante, 1997</cite>
+                    </p>
+                </blockquote>
+                <h3>Type inline</h3>
+                <p>
+                    Il s'agit principalement des balises permettant de mettre en forme des parties d'un texte dans un
+                    élément de type paragraphe.
+                </p>
+                <p>
+                    Le gras et l'italique peuvent chacune être représentés par deux balise, qui visuellement rendent le même
+                    résultat, mais dont l'impact en référencement sera différent.
+                </p>
+                <p>
+                    Pour ne pas impacter le référencement, on utilisera <b><code>&lt;b&gt;</code></b> (<code>bold</code>)
+                    pour le gras et <i><code>&lt;i&gt;</code></i> (<code>italic</code>) pour l'italique.
+                </p>
+                <p>
+                    Si les éléments mis en valeurs doivent jouer sur le référencement, on utilisera
+                    <strong><code>&lt;strong&gt;</code></strong> (<code>strong</code>) pour le gras et
+                    <em><code>&lt;em&gt;</code></em> (<code>emphasis</code>) pour l'italique.
+                </p>
+                <p>
+                    Pour changer l'apparence du texte, on peut <s>biffer</s>, <u>souligner</u> (<b>ATTENTION : par défaut,
+                        ON NE SOULIGNE PAS LE TEXTE EN WEB : pour ne pas le confondre avec les liens</b>), passer un
+                    <mark>marqueur fluo</mark>, écrire des formules chimiques : H<sub>2</sub>SO<sub>4</sub><sup>2-</sup>
+                </p>
+                <h4>Des balises déprécié (a ne plus utiliser)</h4>
+                <style>
+                    .not-font {
+                        font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+                        font-size: 1.6rem;
+                        color: darkred;
+                    }
+                </style>
+                <p>
+                    La balise <code>&lt;font&gt;</code> servait a <font face="cambria" size="6" color="darkred">changer la
+                        police, la taille et la couleur</font> d'un morceau de texte mais la balise, même si elle est encore
+                    interprétée par les navigateurs n'est plus a utiliser. On utilisera à la place une balise
+                    <code>&lt;span&gt;</code> <span class="not-font">à une classe CSS pour faire ces changements.</span>
+                </p>
+            </article>
         </section>
         <section>
-            <h2>Balise mise en forme du texte</h2>
+            <article>
+                <h2 id="special">Les tableaux HTML</h2>
+                <p>
+                    Les tableaux ne doivent servir qu'a afficher des données ou des résultats, JAMAIS à faire de la mise en
+                    page.
+                </p>
+                <p>
+                    avec l'abbréviation emmet suivante on peut générer la base du tableau
+                    <br /><code>table>(thead>tr>th*6)+(tbody>tr[id="$"]*4>(th{$}+(td*5)))+(tfoot>tr>th*6)</code>
+                </p>
+                <h3>Tableau de résultat</h3>
+                <div class="table-rwd">
+                    <table class="dark striped">
+                        <caption>Retro gaming</caption>
+                        <thead>
+                            <tr>
+                                <th>N° Du classement</th>
+                                <th>Nom du jeu</th>
+                                <th>Editeur</th>
+                                <th>Développeur</th>
+                                <th>Année de sortie</th>
+                                <th>Prix à la sortie</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <th>1</th>
+                                <td>Duke Nukem 3d</td>
+                                <td>Apogee Software</td>
+                                <td>3d realms</td>
+                                <td>1996</td>
+                                <td>250 fr</td>
+                            </tr>
+                            <tr>
+                                <th>2</th>
+                                <td>Shadow warrior</td>
+                                <td>Apogee Sofware</td>
+                                <td>3d software</td>
+                                <td>1997</td>
+                                <td>250 fr</td>
+                            </tr>
+                            <tr>
+                                <th>3</th>
+                                <td>Carmageddon</td>
+                                <td>Interplay</td>
+                                <td>Stainless Games</td>
+                                <td>1997</td>
+                                <td>200 fr</td>
+                            </tr>
+                            <tr>
+                                <th>4</th>
+                                <td>Carmagesson II</td>
+                                <td>Sales curve interactive</td>
+                                <td>Stainless Games</td>
+                                <td>1998</td>
+                                <td>250 fr</td>
+                            </tr>
+                        </tbody>
+                        <tfoot>
+                            <tr>
+                                <th>N° Du classement</th>
+                                <th>Nom du jeu</th>
+                                <th>Editeur</th>
+                                <th>Développeur</th>
+                                <th>Année de sortie</th>
+                                <th>Prix à la sortie</th>
+                            </tr>
+                        </tfoot>
+                    </table>
+                </div>
+                <h3>"Fusion" de cellule</h3>
+                <table class="dark striped">
+                    <tr>
+                        <td>1</td>
+                        <td>2</td>
+                        <td>3</td>
+                        <td>4</td>
+                        <td>5</td>
+                    </tr>
+                    <tr>
+                        <td colspan="2">1</td>
+                        <td rowspan="2">2</td>
+                        <td>3</td>
+                        <td>4</td>
+                    </tr>
+                    <tr>
+                        <td colspan="2" rowspan="2">1</td>
+                        <td>2</td>
+                        <td>3</td>
+                    </tr>
+                    <tr>
+                        <td>1</td>
+                        <td>2</td>
+                        <td>3</td>
+                    </tr>
+                    <tr>
+                        <td>1</td>
+                        <td>2</td>
+                        <td>3</td>
+                        <td>4</td>
+                        <td>5</td>
+                    </tr>
+                </table>
+            </article>
         </section>
         <section>
-            <h2>Les tableaux HTML</h2>
+            <article>
+                <h2>Les images</h2>
+                <p>
+                    La balise de base pour appeler une image <code>&lt;img /&gt;</code>. Il faut au minimum l'attribut <code>src</code> qui indique la source de l'image chargée.
+                </p>
+                <p>
+                    En accessibilité, il faudra ajouter l'attribut <code>alt</code>, c'est un texte alternatif qui doit décrire l'image. Si il s'agit d'une image de décoration, on laisse l'attribut vide.
+                </p>
+                <img src="" alt="petit chien mignon" width="200" height="200" />
+                <p>
+                    En référencement, alt est important, ainsi que le nom du fichier image. Si on veut capitaliser sur une image et l'associer à une légende qui améliorera sont référencement, il est important de l'encapsuler dans une balise <code>&lt;figure&gt;</code>
+                </p>
+                <h3>Figure</h3>
+                <p>
+                    Figure est une balise qui permet d'associer une légende à une image
+                </p>
+                <figure>
+                    <img src="./images/huitieme-couleur.jpg" alt="Couverture du roman la huitième couleur" />
+                    <figcaption>
+                        Le premier roman de Terry Pratchett, la huitième couleur, lance l'anthologie des annales du Disque-Monde.
+                    </figcaption>
+                </figure>
+                <p>
+                    Le fait d'indiquer que par défaut toutes les images s'affiche jusqu'au maximum de leur largeur permet d'éviter les débordements lorsqu'on les affiche sur un écran plus petit que leur largeur.
+                </p>
+                <h3>Picture</h3>
+                <p>
+                    En adaptatif, on peut ajouter à la largeur maximale la performance d'affiche ( = rapidité) le choix de la meilleure image adaptée à la largeur de l'écran, avec <code>&lt;picture&gt;</code>
+                </p>
+                <figure>
+                    <picture>
+                        <source srcset="./images/doc-signal-394w.png" media="(min-width: 600px)" />
+                        <source srcset="./images/doc-signal-250w.png" media="(min-width: 400px)" />
+                        <img src="./images/doc-signal-200w.png" alt="Portrait synthwave de Doc Brown" />
+                    </picture>
+                    <figcaption>
+                        L'artiste James White produit des oeuvres dans le courant synthwave, fantasme graphique des année 80, relatif aux posters de film et aux néons fluo.
+                    </figcaption>
+                </figure>
+            </article>
         </section>
         <section>
-            <h2>Les images</h2>
+            <article>
+                <h2>Les media</h2>
+                <p>
+                    On parle ici en pluse des images, de l'audio et la vidéo.
+                </p>
+                <h3>L'audio hébergé sur le site</h3>
+                <figure class="audio">
+                    <img src="/images/diablo_02.jpg" />
+                    <audio id="lecteur">
+                        <source src="./media/audio/diablo_town.ogg" type="audio/ogg" />
+                        <source src="./media/audio/diablo_town.mp3" type="audio/mp3" />
+                    </audio>
+                    <figcaption>
+                        Lire le fichier<br />
+                        <button id="playAudio" data-target="lecteur">Play <span></span></button>
+                        <button id="plauseAudio" data-target="lecteur">Pause</button>
+                    </figcaption>
+                </figure>
+                <h3>La vidéo hébergée sur le site</h3>
+                <figure>
+                    <video controls id="lecteur-video">
+                        <source src="./media/video/Fallout-4-Launch-Trailer.mp4" type="video/mp4" />
+                    </video>
+                </figure>
+                <figure>
+                    <video controls>
+                        <source src="./media/video/Big_Buck_Bunny_360_10s_1MB.webm" type="video/webm" />
+                        <source src="./media/video/Big_Buck_Bunny_360_10s_1MB.mp4" type="video/mp4" />
+                    </video>
+                </figure>
+                <h3>Les média partagés par d'autres site</h3>
+                <p>
+                    Tous les média audio, vidéos et posts type bluesky, facebook, etc que l'on peut partager sont en fait l'inclusion dans la page d'iframes
+                </p>
+                <p>
+                    Les iframes sont des cadres qui appelent des pages partageables qui viennent d'autre sites.
+                </p>
+                <h4>la vidéo</h4>
+                <h5>Youtube</h5>
+                <iframe width="560" height="315" src="https://www.youtube.com/embed/ScaWF4gEK3c?si=jpuf6OWRp0U31rgs" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                <h5>Le problème de l'adaptatif</h5>
+                <p>
+                    Youtube ne propose pas par défaut une iframe adaptative, il faudra créer soit-même le CSS pour rendre la vidéo adaptative.
+                </p>
+                <h5>Dailymotion</h5>
+                <p>
+                    Dailymotion apporte une solution adaptative par défaut
+                </p>
+                <div style="position:relative;padding-bottom:56.25%;height:0;overflow:hidden;">
+                    <iframe src="https://geo.dailymotion.com/player.html?video=x2fkhd"
+                      style="width:100%; height:100%; position:absolute; left:0px; top:0px; overflow:hidden; border:none;"
+                      allowfullscreen
+                      title="Dailymotion Video Player"
+                      allow="web-share">
+                    </iframe>
+                  </div>
+                    <h4>L'audio</h4>
+            </article>
         </section>
         <section>
-            <h2>Les media</h2>
-        </section>
-        <section>
-            <h2>Les formulaires</h2>
+            <article>
+                <h2>Les formulaires</h2>
+            </article>
         </section>
     </main>
     <footer>
-
+        <div>
+            <p>&copy; DAWAN - Feb 2025</p>
+        </div>
     </footer>
 </body>
+
 </html>
