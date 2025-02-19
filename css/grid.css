@@ -1,0 +1,145 @@
+.grid {
+  display: grid;
+}
+
+.espace-grille {
+  display: grid;
+  margin: 0;
+  grid-template-columns: 1fr;
+  gap: 0.5rem;
+}
+
+.grid-div {
+  border: 1px solid var(--dark-table-bg-color);
+  padding: var(--gutter-x);
+}
+
+.espace-aire{
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-areas:
+    "entete"
+    "menu"
+    "contenu"
+    "pied";
+}
+
+.espace-aire > * {
+  border: 1px solid var(--dark-table-bg-color);
+  padding: var(--gutter-x);
+}
+
+#entete {
+  grid-area: entete;
+}
+
+#menu {
+  grid-area: menu;
+}
+
+#contenu {
+  grid-area: contenu;
+}
+
+#pied {
+  grid-area: pied;
+}
+
+@media screen and (min-width: 576px) {
+  .espace-grille {
+    grid-template-columns: 1fr 2fr;
+  }
+
+  .espace-grille > *:nth-child(3) {
+    grid-column: span 2;
+  }
+
+  .espace-grille > *:nth-child(5) {
+    grid-row: span 2;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .espace-grille {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+
+  .espace-grille > *:nth-child(2) {
+    grid-column: span 2;
+  }
+
+  .espace-grille > *:nth-child(10) {
+    grid-column: span 2;
+    grid-row: span 2;
+  }
+}
+
+@media screen and (min-width: 992px) {
+  .espace-grille {
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+  }
+
+  .espace-grille > *:nth-child(1) {
+    grid-column: span 2;
+  }
+  .espace-grille > *:nth-child(14) {
+    grid-column: span 4;
+  }
+
+  .espace-aire{
+    grid-template-columns: 1fr 250px;
+    grid-template-areas:
+      "entete entete"
+      "contenu menu"
+      "pied pied";
+  }
+
+}
+
+@media screen and (min-width: 1200px) {
+  .espace-grille {
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+  }
+
+  .espace-grille > *:nth-child(3) {
+    grid-column: span 1;
+  }
+
+  .espace-grille > *:nth-child(11) {
+    grid-row: span 2;
+  }
+
+  .espace-grille > *:nth-child(14) {
+    grid-column: span 5;
+  }
+}
+
+@media screen and (min-width: 1400px) {
+  .espace-grille {
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+  }
+
+  .espace-grille > *:nth-child(10),
+  .espace-grille > *:nth-child(11) {
+    grid-row: span 1;
+  }
+
+  .espace-grille > *:nth-child(9) {
+    grid-column: span 2;
+  }
+
+  .espace-grille > *:nth-child(13) {
+    grid-row: span 2;
+  }
+}
+
+@media screen and (min-width: 1600px) {
+  .espace-grille {
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+  }
+
+  .espace-grille > *:nth-child(4),
+  .espace-grille > *:nth-child(5) {
+    grid-row: span 5;
+  }
+}

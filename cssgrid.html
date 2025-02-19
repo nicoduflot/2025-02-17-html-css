@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Formation HTML5 CSS3 - Javascript - JQUERY" />
+    <title>Formation HTML5 CSS3 - Javascript - JQUERY</title>
+    <!-- Partie des liens vers le CSS et les fichiers scripts js ou jquery  -->
+    <link rel="stylesheet" href="./css/style.css" />
+    <link rel="stylesheet" href="./css/grid.css" />
+</head>
+
+<body>
+    <header>
+        <div class="container">
+            <h1>Formation HTML5 CSS3 - Javascript - JQUERY</h1>
+        </div>
+    </header>
+    <nav role="navigation">
+        <div class="container">
+            <ul>
+                <li><a href="./index.html">Introduction</a></li>
+                <li><a href="./formulaire.html">Formulaire</a></li>
+                <li><a href="./cssgrid.html">Grilles CSS</a></li>
+                <li><a href="./jsbase.html">JS bases</a></li>
+                <li><a href="./jsajax.html">JS Ajax</a></li>
+                <li><a href="./jquerybase.html">JQuery bases</a></li>
+                <li><a href="./jquerycss.html">JQuery CSS</a></li>
+                <li><a href="./jqueryajax.html">Jquery Ajax</a></li>
+            </ul>
+        </div>
+    </nav>
+    <main class="container">
+        <article>
+            <h2>Les grilles CSS</h2>
+            <p>
+                La propriété <code>grid</code> permet de transformer l'élément qui la possède en une grille.
+            </p>
+            <p>
+                Il faut ensuite définir le comportement de la grille :
+            </p>
+            <ul>
+                <li>Le modèle des colonnes</li>
+                <li>Les espaces (goutières) entre les éléments de la grille</li>
+                <li>La hauteur minimale, maximale ou automatique des lignes</li>
+                <li>
+                    <a href="https://developer.mozilla.org/fr/docs/Web/CSS/grid" target="_blank">
+                        Plus d'information sur la définition des grilles.
+                    </a>
+                </li>
+            </ul>
+            <h3>Format ligne et colonnes</h3>
+            <p>
+                Dans ce type de grille, on définit le format des colonnes et les comportement des lignes par défaut
+            </p>
+            <p>
+                On applique le display grid à <code>div class="espace-grille"</code>. Ensuite, avec
+                <code>grid-template-columns</code> on indique le nombre de fractions horizontales appliqué à
+                <code>div class="espace-grille"</code>, ici, une seule fraction (1fr => une colonne). Enfin, une
+                goutière (gap) de 0.5rem entre les éléments de la grille.
+            </p>
+            <p>
+                <code>.espace-grille{<br />
+                &nbsp;&nbsp;display: grid;<br />
+                &nbsp;&nbsp;margin: 0;<br />
+                &nbsp;&nbsp;grid-template-columns: 1fr;<br />
+                &nbsp;&nbsp;gap: 0.5rem;<br />
+                }</code>
+            </p>
+            <p>
+                On peut ensuite indiqué à chaque élément enfant direct de l'espace grille la place qu'il occupe en
+                nombre de colonne de large et / ou en hauteur de ligne
+            </p>
+            <div class="espace-grille">
+                <div class="grid-div">
+                    <b>01</b>
+                    <p>la division de grille 01</p>
+                </div>
+                <div class="grid-div">
+                    <b>02</b>
+                    <p>la division de grille 02</p>
+                </div>
+                <div class="grid-div">
+                    <b>03</b>
+                    <p>la division de grille 03</p>
+                </div>
+                <div class="grid-div">
+                    <b>04</b>
+                    <p>la division de grille 04</p>
+                </div>
+                <div class="grid-div">
+                    <b>05</b>
+                    <p>la division de grille 05</p>
+                </div>
+                <div class="grid-div">
+                    <b>06</b>
+                    <p>la division de grille 06</p>
+                </div>
+                <div class="grid-div">
+                    <b>07</b>
+                    <p>la division de grille 07</p>
+                </div>
+                <div class="grid-div">
+                    <b>08</b>
+                    <p>la division de grille 08</p>
+                </div>
+                <div class="grid-div">
+                    <b>09</b>
+                    <p>la division de grille 09</p>
+                </div>
+                <div class="grid-div">
+                    <b>10</b>
+                    <p>la division de grille 10</p>
+                </div>
+                <div class="grid-div">
+                    <b>11</b>
+                    <p>la division de grille 11</p>
+                </div>
+                <div class="grid-div">
+                    <b>12</b>
+                    <p>la division de grille 12</p>
+                </div>
+                <div class="grid-div">
+                    <b>13</b>
+                    <p>la division de grille 13</p>
+                </div>
+                <div class="grid-div">
+                    <b>14</b>
+                    <p>la division de grille 14</p>
+                </div>
+            </div>
+            <h3>Format aire de grille</h3>
+            <p>
+                Dans l'espace de grille, on va définir des aires de la grille, et pour chaque élément identifié à
+                l'intérieur, on va indiquer l'espace prix selon les aires.
+            </p>
+            <div class="espace-aire">
+                <div id="entete">
+                    <b>Titre</b>
+                </div>
+                <div id="menu">
+                    <ul>
+                        <li>toto</li>
+                        <li>toto</li>
+                        <li>toto</li>
+                        <li>toto</li>
+                        <li>toto</li>
+                    </ul>
+                </div>
+                <div id="contenu">
+                    <p>
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam ultrices feugiat quam at
+                        scelerisque. Maecenas sit amet dui at dui efficitur posuere. Interdum et malesuada fames ac ante
+                        ipsum primis in faucibus. Nulla euismod enim nec commodo tempor. Etiam in tristique purus, eu
+                        imperdiet ipsum. Suspendisse nisi augue, imperdiet sed erat eget, bibendum pharetra ex. Quisque
+                        accumsan sem ac ante finibus commodo. Nulla nec ipsum auctor, pulvinar nisi at, porttitor
+                        lectus.
+
+                    </p>
+                    <p>
+                        Proin congue mauris velit, non bibendum ipsum molestie ut. In sit amet felis viverra, malesuada
+                        massa non, malesuada dui. Morbi velit nulla, pharetra vel ultrices vitae, laoreet nec sapien.
+                        Curabitur ut nisl maximus, mattis nibh et, varius urna. Praesent sed pharetra arcu. Quisque nec
+                        aliquam elit. Suspendisse condimentum mi eu ex viverra, quis viverra magna accumsan. Nulla
+                        rhoncus lobortis risus, at placerat mi vulputate id. Maecenas varius placerat mollis. Vivamus
+                        dapibus, dui sit amet dignissim bibendum, dolor nibh vulputate mi, sit amet commodo justo est ut
+                        lorem. Mauris a turpis sit amet risus consequat dictum. Curabitur pharetra, tortor vel commodo
+                        blandit, leo nisl imperdiet tortor, sit amet accumsan sapien arcu ut justo. Praesent eu mi
+                        euismod, placerat est sed, ornare est. Nunc nec felis nec massa sagittis ultricies. Proin in dui
+                        quam. Donec eget volutpat urna, et placerat elit.
+                    </p>
+                    <p>
+                        Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.
+                        Nullam venenatis lacus at suscipit vehicula. Sed ac pulvinar est, sed malesuada ex. Quisque
+                        vulputate est non dui blandit molestie. Nunc quis fringilla mi, nec volutpat lacus. Cras
+                        facilisis sodales leo ut tempus. Vivamus eget lectus sit amet tellus vestibulum bibendum.
+                        Integer dolor sapien, lobortis in porttitor vel, aliquet suscipit metus. Quisque dapibus nibh
+                        justo, quis imperdiet justo molestie in. Duis purus tortor, pulvinar at neque id, accumsan
+                        commodo dui. Sed laoreet orci quis egestas mattis. Curabitur id sem dolor. Sed a vehicula
+                        libero, et vulputate magna. Nulla ultricies, dolor in ullamcorper vulputate, augue turpis
+                        imperdiet nisl, imperdiet convallis lorem magna bibendum risus.
+                    </p>
+                </div>
+                <div id="pied">
+                    &copy; DAWAN
+                </div>
+            </div>
+        </article>
+    </main>
+    <footer>
+        <div class="container">
+            <p>&copy; DAWAN - Feb 2025</p>
+        </div>
+    </footer>
+</body>
+
+</html>
