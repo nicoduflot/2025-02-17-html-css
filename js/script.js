@@ -11,5 +11,6 @@ window.addEventListener('DOMContentLoaded', function(){
     pause.addEventListener('click', function(){
         document.getElementById(pause.dataset.target).pause();
     });
-    
+
+    const formSub = document.querySelector('form#coordonnees button[type="submit');
 });

@@ -13,14 +13,15 @@
 
 <body>
     <header>
-        <div>
+        <div class="container">
             <h1>Formation HTML5 CSS3 - Javascript - JQUERY</h1>
         </div>
     </header>
     <nav role="navigation">
-        <div>
+        <div class="container">
             <ul>
                 <li><a href="./index.html">Introduction</a></li>
+                <li><a href="./formulaire.html">Formulaire</a></li>
                 <li><a href="./cssgrid.html">Grilles CSS</a></li>
                 <li><a href="./jsbase.html">JS bases</a></li>
                 <li><a href="./jsajax.html">JS Ajax</a></li>
@@ -30,7 +31,7 @@
             </ul>
         </div>
     </nav>
-    <main>
+    <main class="container">
         <section>
             <article>
                 <header>
@@ -412,10 +413,12 @@
             <article>
                 <h3>la vidéo</h3>
                 <h4>Youtube</h4>
-                <iframe width="560" height="315" src="https://www.youtube.com/embed/ScaWF4gEK3c?si=jpuf6OWRp0U31rgs"
-                    title="YouTube video player" frameborder="0"
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                    referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                <figure class="media-ratio ratio-16-9">
+                    <iframe src="https://www.youtube.com/embed/ScaWF4gEK3c?si=jpuf6OWRp0U31rgs"
+                        title="YouTube video player" frameborder="0"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                        referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                </figure>
                 <h4>Le problème de l'adaptatif</h4>
                 <p>
                     Youtube ne propose pas par défaut une iframe adaptative, il faudra créer soit-même le CSS pour
@@ -477,20 +480,13 @@
                         target="_blank" style="color: #cccccc; text-decoration: none;">Bleach (Deluxe Edition)</a>
                 </div>
                 <h3>bandcamp</h3>
-                <iframe style="border: 0; width: 400px; height: 120px;"
-                    src="https://bandcamp.com/EmbeddedPlayer/album=3828771716/size=large/bgcol=333333/linkcol=e99708/tracklist=false/artwork=small/transparent=true/"
-                    seamless><a href="https://weswaltz.bandcamp.com/album/more-is-more">More Is More de Wes
-                        Waltz</a></iframe>
+                <iframe style="border: 0; width: 350px; height: 350px;" src="https://bandcamp.com/EmbeddedPlayer/album=3828771716/size=large/bgcol=333333/linkcol=e99708/minimal=true/transparent=true/" seamless><a href="https://weswaltz.bandcamp.com/album/more-is-more">More Is More de Wes Waltz</a></iframe>
             </article>
         </section>
-        <section>
-            <article>
-                <h2>Les formulaires</h2>
-            </article>
-        </section>
+        
     </main>
     <footer>
-        <div>
+        <div class="container">
             <p>&copy; DAWAN - Feb 2025</p>
         </div>
     </footer>

@@ -147,154 +147,372 @@ sélecteur CSS :
 
 /* déclaration de surcharge de la racine du css */
 
-:root{
-    --font-content: Arial, Helvetica, sans-serif;
-    --font-title: cambria, serif;
-    font-family: var(--font-content);
-    font-size: 1.3rem;
-    line-height: 1.7rem;
-    /* couleur du site */
-    --site-color: black;
-    --site-bg-color: #D9D8D7;
-    --site-title-color: #D93B48;
-    --site-link-color: #F2B807;
-    --site-header-color: #F28B0C;
-    --site-nav-color: var(--site-header-color);
-    --site-nav-link-color: var(--site-color);
-    /* couleur par défaut des tableaux */
-    --default-table-border-color: black;
-    --dark-table-bg-color: #333;
-    --dark-table-striped-bg-color: #555;
-    --dark-table-font-color: white;
-    --dark-table-headers-bg-color: black;
-    --dark-table-headers-border-color: #ddd;
-    --gutter-x: 0.5rem;
+:root {
+  --font-content: Arial, Helvetica, sans-serif;
+  --font-title: cambria, serif;
+  font-family: var(--font-content);
+  font-size: 1.2rem;
+  line-height: 1.7rem;
+  /* couleur du site */
+  --site-color: black;
+  --site-bg-color: #d9d8d7;
+  --site-title-color: #d93b48;
+  --site-link-color: #f28b0c;
+  --site-header-color: #f28b0c;
+  --site-nav-color: var(--site-header-color);
+  --site-nav-link-color: var(--site-color);
+  /* couleur par défaut des tableaux */
+  --default-table-border-color: black;
+  --dark-table-bg-color: #333;
+  --dark-table-bg-color-1-2: rgba(51, 51, 51, 0.5);
+  --site-link-over-bg: rgba(51, 51, 51, 0.5);
+  --dark-table-striped-bg-color: #555;
+  --dark-table-font-color: white;
+  --dark-table-headers-bg-color: black;
+  --dark-table-headers-border-color: #ddd;
+  --gutter-x: 0.5rem;
+  --success-bg: rgb(135, 250, 156);
+  --success-border:rgb(19, 218, 56);
+  --info-bg: rgb(135, 206, 250);
+  --info-border: rgb(45, 168, 244);
+  --warning-bg: rgb(250, 212, 135);
+  --warning-border: rgb(255, 188, 53);
+  --danger-bg: rgb(250, 135, 135);
+  --danger-border: rgb(248, 73, 73);
 }
 
 /* déclaration générale de "mise à niveau" du css */
-*{
-    box-sizing: border-box;
+* {
+  box-sizing: border-box;
 }
 
-body{
-    margin: 0;
-    background-color: var(--site-bg-color);
+body {
+  margin: 0;
+  background-color: var(--site-bg-color);
 }
 
-h1, h2, h3, h4, h5, h6{
-    font-family: var(--font-title);
-    margin: 0;
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--font-title);
+  margin: 0;
+}
+
+h1 {
+  font-size: calc(1.375rem + 1.5vw);
+  padding: var(--gutter-x) 0;
+}
+
+h2 {
+  font-size: calc(1.325rem + 0.9vw);
+}
+
+h3 {
+  font-size: calc(1.3rem + 0.6vw);
+}
+
+h4 {
+  font-size: calc(1.275rem + 0.3vw);
+}
+
+h5 {
+  font-size: 1.25rem;
+}
+
+h6 {
+  font-size: 1rem;
 }
 
 /* déclarations générale */
 
-a{
-    color: var(--site-link-color);
+a {
+  color: var(--site-link-color);
+  text-decoration: none;
+}
+
+a:hover,
+a:focus,
+a:focus-visible{
+    background-color: var(--site-link-over-bg);
+    outline: none;
 }
 
 img,
-video{
-    max-width: 100%;
+video {
+  max-width: 100%;
 }
 
 /* exemple sélecteur # */
-#special{
-    /* l'élément dans la page yant l'id="special" */
-    font-family: 'Arial Narrow Bold', sans-serif;
+#special {
+  /* l'élément dans la page yant l'id="special" */
+  font-family: "Arial Narrow Bold", sans-serif;
 }
 
 /* classe pour rendre le tableau adaptatif */
-.table-rwd{
-    overflow-x: auto;
+.table-rwd {
+  overflow-x: auto;
 }
 
-table{
-    border-collapse: collapse;
+table {
+  border-collapse: collapse;
 }
 
-table th, table td{
-    border: 1px solid var(--default-table-border-color);
+table th,
+table td {
+  border: 1px solid var(--default-table-border-color);
+  padding: var(--gutter-x);
+}
+
+table.dark {
+  background-color: var(--dark-table-bg-color);
+  color: var(--dark-table-font-color);
+}
+
+table.dark thead,
+table.dark tfoot {
+  background-color: var(--dark-table-headers-bg-color);
+}
+
+table.dark.striped tbody tr:nth-of-type(odd) {
+  background-color: var(--dark-table-striped-bg-color);
+}
+
+table.dark :not(tbody) tr > *:not(:last-child) {
+  border-right-color: var(--dark-table-headers-border-color);
+}
+
+/* classe pour les encart information */
+
+.alert{
+    font-size: 0.8rem;
+    font-style: italic;
     padding: var(--gutter-x);
+    border: 2px solid transparent;
+    border-radius: var(--gutter-x);
 }
 
-table.dark{
-    background-color: var(--dark-table-bg-color);
-    color: var(--dark-table-font-color);
+.alert-info{
+    background-color: var(--info-bg);
+    border-color: var(--info-border);
 }
 
-table.dark thead, table.dark tfoot{
-    background-color: var(--dark-table-headers-bg-color);
+.alert-warning{
+    background-color: var(--warning-bg);
+    border-color: var(--warning-border);
 }
 
-table.dark.striped tbody tr:nth-of-type(odd){
-    background-color: var(--dark-table-striped-bg-color);
+.alert-danger{
+    background-color: var(--danger-bg);
+    border-color: var(--danger-border);
 }
 
-table.dark :not(tbody) tr > *:not(:last-child){
-    border-right-color: var(--dark-table-headers-border-color);
+.alert-success{
+    background-color: var(--success-bg);
+    border-color: var(--success-border);
+}
+
+button{
+    padding: calc(var(--gutter-x) / 2);
+    border: 2px solid transparent;
+    border-radius: calc(var(--gutter-x) / 2);
+}
+
+button.alert-info:hover,
+button.alert-info:focus,
+button.alert-info:focus-visible{
+    background-color: var(--info-border);
+    outline: none;
+}
+button.alert-warning:hover,
+button.alert-warning:focus,
+button.alert-warning:focus-visible{
+    background-color: var(--warning-border);
+    outline: none;
+}
+button.alert-danger:hover,
+button.alert-danger:focus,
+button.alert-danger:focus-visible{
+    background-color: var(--danger-border);
+    outline: none;
+}
+
+button.alert-success:hover,
+button.alert-success:focus,
+button.alert-success:focus-visible{
+    background-color: var(--success-border);
+    outline: none;
 }
 
 /* classes pour les ratio d'affichge media adaptatif */
-.media-ratio{
-    position:relative;
-    height:0;
-    overflow:hidden;
+.media-ratio {
+  position: relative;
+  height: 0;
+  overflow: hidden;
 }
 
-.media-ratio > *{
-    width:100%; 
-    height:100%; 
-    position:absolute; 
-    left:0px; 
-    top:0px; 
-    overflow:hidden; 
-    border:none;
+.media-ratio > * {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  overflow: hidden;
+  border: none;
 }
 
-
-.ratio-portrait{
-    padding-bottom: 141.42%;
+.ratio-portrait {
+  padding-bottom: 141.42%;
 }
 
-.ratio-16-9{
-    padding-bottom:56.25%;
+.ratio-16-9 {
+  padding-bottom: 56.25%;
 }
 
-.ratio-21-9{
-    padding-bottom:42.85%;
+.ratio-21-9 {
+  padding-bottom: 42.85%;
 }
 
-.max-600 > *{
-    max-width: 600px;
+.max-600 > * {
+  max-width: 600px;
 }
 
 /* déclaration selon la structure de la page */
 body > header,
 body > nav,
-body > footer{
-    background-color: var(--site-header-color);
+body > footer {
+  background-color: var(--site-header-color);
 }
 
-body > nav ul{
-    margin: 0;
+body > nav ul {
+  margin: 0;
 }
 
 body > nav a,
-body > footer a{
-    color: var(--site-nav-link-color);
+body > footer a {
+  color: var(--site-nav-link-color);
 }
 
-body > footer{
-    padding: 1rem 0;
+body > footer {
+  padding: 1rem 0;
 }
 
-main article{
-    padding: var(--gutter-x);
+main article {
+  padding: var(--gutter-x);
 }
 
 body > header > *,
 body > nav > *,
-body > footer > *{
-    padding-left:var(--gutter-x) ;
-    padding-right:var(--gutter-x) ;
+body > footer > * {
+  padding-left: var(--gutter-x);
+  padding-right: var(--gutter-x);
+}
+
+body > nav ul{
+    list-style-type: none;
+    padding: 0;
+}
+
+body > nav ul li:not(:last-child){
+    border-bottom: 1px solid var(--dark-table-bg-color);
+}
+
+body > nav ul li a{
+    display: block;
+    text-decoration: none;
+    padding: calc(var(--gutter-x) / 2);
+}
+
+body > nav ul li a:hover,
+body > nav ul li a:focus,
+body > nav ul li a:focus-visible{
+    background-color: var(--dark-table-bg-color);
+    color: var(--site-header-color);
+    outline: none;
+}
+
+
+/* css pour l'adaptatif : les media queries */
+
+.container {
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* création des points de rutpure pour l'adaptatif */
+/* le comportement du CSS en affichage écran */
+@media screen and (min-width: 576px) {
+  .container {
+    max-width: 540px;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .container {
+    max-width: 720px;
+  }
+
+  body > nav ul{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+
+  body > nav ul li:not(:last-child){
+    border-bottom: 0;
+  }
+
+}
+
+@media screen and (min-width: 992px) {
+  .container {
+    max-width: 960px;
+  }
+
+  main > section{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+
+  main > section > *{
+    width: 50%;
+  }
+
+  main > section > header,
+  main > section > *:last-child:first-child:not(header){
+    width: 100%;
+  }
+
+
+}
+
+@media screen and (min-width: 1200px) {
+  .container {
+    max-width: 1140px;
+  }
+
+  main > section > *{
+    width: 33%;
+  }
+
+}
+
+@media screen and (min-width: 1400px) {
+  .container {
+    max-width: 1320px;
+  }
+}
+
+@media screen and (min-width: 1600px) {
+  .container {
+    max-width: 1560px;
+  }
+}
+
+/* le comportement du CSS pour l'impression de la page */
+@media print {
 }
