@@ -10,209 +10,6 @@
     <link rel="stylesheet" href="./css/style.css" />
     <script>
         console.log('Salut !');
-        console.log('L\'originlaité d\'utliser des apostrophes, \nou de revenir à la ligne dans un affichge console\n\t\tespace');
-        console.error('Une erreur');
-        console.log(['toto', 'titi', 'tata']);
-        console.table(['toto', 'titi', 'tata']);
-        // Commentaire en une lgne a éviter, en cas de "minification" (tous le code js en une seule ligne), risque de commenter des sections utiles
-        /* 
-        On préfère le commentaire en bloc
-        */
-
-        /* les variables */
-        var prenom = 'Jean'; /* dépréciée despuis ESC6 */
-        console.log(prenom);
-        /*
-            Constante : avec ES6, il est préconisé d'utiliser au maximum la déclaration de constantes pour toutes les variables qui ne changeront jamais de contenu dans le script, sachant que la plupart de ce qu'on utilise en web avec javascript se trouve sous la forme d'objets, un objet ne se modifie jamais, c'est le contenu de ses attributs et ses méthodes qui changent
-        */
-        
-        const jourSemaine = [];
-
-        console.log(jourSemaine);
-        
-        jourSemaine.push('Lundi', 'Mardi', 'Mercredi', 'Jeudi', 'Vendredi', 'Samedi', 'Dimanche');
-        console.log(jourSemaine);
-        console.log(jourSemaine.length);
-
-        /* si la valeur d'une variable évolue, on utilise alors le mot clef let */
-        let nom = 'Durand';
-        nom = 'Neige';
-        const PI = Math.PI;
-
-        /* le type de variable */
-        console.log(typeof PI);
-        console.log(typeof jourSemaine);
-        console.log(typeof nom);
-        
-        /* les variables peuvent changer de type : elle sont typées par leur contenu => c'est le transtype */
-        nom = 42;
-        console.log(nom, typeof nom);
-        nom = nom + 12;
-        console.log(nom, typeof nom);
-        nom = nom + 'toto';
-        console.log(nom, typeof nom);
-        const aujourdhui = new Date();
-        console.log(aujourdhui.getFullYear(), typeof aujourdhui.getFullYear());
-        
-        const ageActuel = aujourdhui.getFullYear() - 1980;
-        const depActuel = 59;
-        const prenomActuel = 'Nicolas';
-
-        /* bonjour, je m'appelle prenomActuel, j'ai ageActuel ans et j'habite dans le depActuel */
-        /* La concaténation de chaînes et de variable avec le signe plus ne s'utilise plus, il génère trop d'erreurs, notemment le transtypage */
-        console.log('Bonjour, je m\'appelle ' + prenomActuel + ', j\'ai ' + ageActuel +' ans et j\'habite dans le ' + depActuel);
-        /* on utilisera dans ce cas l'interpolation de texte */
-        console.log(`Bonjour, je m'appelle ${prenomActuel}, j'ai ${ageActuel} ans et j'habite dans le ${depActuel}`);
-        const x = 4;
-        const y = 38;
-        console.log(`La somme de ${x} et ${y} est ${x + y} `);
-        console.log(`l'année actuelle est ${aujourdhui.getFullYear()}, dans JS, PI est égal à ${Math.PI}`);
-
-        /*
-        les types de variables
-        Deux catégories de variables
-        [Type primitif]
-            int => nombre entier (sous-type de number => un nombre)
-            float => nombre à virgule flottante (sous-type de number => un nombre)
-            bool => booléeen (vrai ou faux)
-        
-        [Type référence]
-            string => chaîne de caractère
-            array => tableau de variables
-            object => les objets
-            JSON => JavaScript Object Notation
-        */
-        /* créons un objet litéral */
-        const obj = {
-            tab : [1, 2, 3, 4],
-            nom : 'Duflot',
-            somme: function(x, y){
-                return x + y;
-            }
-        };
-
-        console.log(obj);
-        console.log(typeof obj);
-        console.log(obj.somme(5, 4));
-        console.log(obj.tab);
-        
-        /* un objet JSON */
-        const clientJson = {
-            'Nom': 'Duflot',
-            'Prenom': 'Nicolas',
-            'Age' : ageActuel
-        }
-
-        console.log(clientJson);
-        console.log(typeof clientJson);
-        console.log(clientJson.Nom);
-
-        /*
-        Opérateurs :
-        Mathématiques : 
-            + addition 
-            - soustraction 
-            * multiplication 
-            / division 
-            % modulo : récupère le reste d'une division entière
-            ** remplace Math.pow()
-        */
-
-        console.log(Math.pow(2, 2));
-        console.log(2**2);
-        /* 
-        L'incrémentation et la décrémentation 
-        $variable++ ++$variable
-        $variable-- --$variable
-        */
-
-        let z = 22;
-        console.log(z);     /* affiche 22 */
-        console.log(z++);   /* affiche 22 puis ajoute 1 à la valeur z devient 23 */
-        console.log(++z);   /* ajoute 1 à z puis affiche 24 */
-        
-        /* les normes préconisent d'éviter les raccourcis de ce type, on notera à la place d'un ++ */
-        console.log(z= z + 1);
-        /* 
-        Opérateurs de comparaison 
-        
-        > supérieur à
-        < inférieur à
-        >= supérieur ou égal à
-        <= inférieur ou égal à
-        == égalité de valeur (non stricte)
-        */        
-        console.log(`2 == 2 : ${2 == 2}`);
-        console.log(`2 == '2' : ${2 == '2'}`);
-        /*
-        === égalité stricte
-        */
-        console.log(`2 === 2 : ${2 === 2}`);
-        console.log(`2 === '2' : ${2 === '2'}`);
-        /*
-        même chose pour la différence
-        != (différence non stricte)
-        !== (différence stricte)
-
-        >== et <== n'existent pas
-
-        */
-
-        console.log(`'1' >= 2 : ${'1' >= 2}`);
-        console.log(`'2' >= 2 : ${'2' >= 2}`);
-        console.log(`'3' >= 2 : ${'3' >= 2}`);
-        
-        /* 
-        Opérateurs logiques
-        && ET
-
-        a && b si a est vrai et b est vrai alors retourne vrai
-        a && b si a est vrai et b est faux alors retourne faux
-        a && b si a est faux et b est vrai alors retourne faux
-        a && b si a est faux et b est faux alors retourne faux
-
-        || OU 
-        a || b si a est vrai et b est vrai alors retourne vrai
-        a || b si a est vrai et b est faux alors retourne vrai
-        a || b si a est faux et b est vrai alors retourne vrai
-        a || b si a est faux et b est faux alors retourne faux
-
-        ! NON
-        !a et a est vrai retourne faux
-        !a et a est faux retourne vrai
-
-        ^ OU EXCLUSIF BINAIRE (X-OR)
-        a ^ b si a est vrai et b est vrai alors retourne faux
-        a ^ b si a est vrai et b est faux alors retourne vrai
-        a ^ b si a est faux et b est vrai alors retourne vrai
-        a ^ b si a est faux et b est faux alors retourne faux
-        */
-
-        /* tableaux */
-        const cars = ['Peugeot', 'Ford'];
-        console.log(cars);
-        cars.push('Hyundai');
-        cars.push('Fiat', 'Alpine');
-        console.log(cars);
-        cars.splice(0, 0, 'Dacia');
-        console.log(cars);
-        const extract = cars.splice(1, 2, 'GMC');
-        console.log(cars);
-        cars.splice(2, 0, extract[0], extract[1]);
-        console.log(extract);
-        /* comment créer un tableau à partir d'un tableau existant */
-        const carsClone = cars.slice();
-        const carsClone2 = cars.slice(2, 6);
-        console.log(cars);
-        console.log(carsClone);
-        console.log(carsClone.pop());
-        console.log(cars);
-        console.log(carsClone);
-        console.log(carsClone2);
-
-        
-        
-
     </script>
     <script src="./js/jsbases.js"></script>
 </head>
@@ -244,6 +41,37 @@
             <p>
                 Les résultats sont affichés dans la console des outils de développement
             </p>
+            <h2>Manipuler le DOM</h2>
+            <p>
+                DOM : Document Object Model
+            </p>
+            <p>
+                Javascript permet de manipuler le DOM, c'est dire
+                le HTML de la page dans laquelle il est exécuté.
+            </p>
+            <p>
+                Pour pouvoir manipuler le HTML avec javascript il faut que le DOM
+                soit complètement chargé.
+            </p>
+            <ul>
+                <li>Window : fenêtre</li>
+                <li>Document : document HTML</li>
+            </ul>
+            <p class="clickMe">
+                Pour manipuler le DOM avec javascript, deux concepts :
+            </p>
+            <ul>
+                <li>Évènement : une action ciblée sur le DOM</li>
+                <li>Action : Modifier, lire, ajouter, supprimer, ect.
+                    des éléments du DOM</li>
+            </ul>
+            <h3>Guetter un évènement</h3>
+                <p id="clickMe">
+                    Ce paragraphe a un id clickMe, il va me permettre de surveiller ce
+                    paragraphe en particulier, je vais surveille son clique.
+                </p>
+                <textarea style="width: 200px; height: 200px;" id="textContent"></textarea><br />
+                <textarea style="width: 200px; height: 200px;" id="innerText"></textarea>
         </article>
     </main>
     <footer>
