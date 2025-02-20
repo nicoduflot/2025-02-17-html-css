@@ -49,7 +49,7 @@
                 Javascript permet de manipuler le DOM, c'est dire
                 le HTML de la page dans laquelle il est exécuté.
             </p>
-            <p>
+            <p class="clickMe">
                 Pour pouvoir manipuler le HTML avec javascript il faut que le DOM
                 soit complètement chargé.
             </p>
@@ -57,8 +57,8 @@
                 <li>Window : fenêtre</li>
                 <li>Document : document HTML</li>
             </ul>
-            <p class="clickMe">
-                Pour manipuler le DOM avec javascript, deux concepts :
+            <p class="clickMe active">
+                <span id="toto" data-toto="tata">Pour manipuler</span> le DOM avec javascript, deux concepts :
             </p>
             <ul>
                 <li>Évènement : une action ciblée sur le DOM</li>
@@ -70,8 +70,15 @@
                     Ce paragraphe a un id clickMe, il va me permettre de surveiller ce
                     paragraphe en particulier, je vais surveille son clique.
                 </p>
-                <textarea style="width: 200px; height: 200px;" id="textContent"></textarea><br />
-                <textarea style="width: 200px; height: 200px;" id="innerText"></textarea>
+                <label>innerHTML</label>
+                <textarea style="width: 100%; height: 200px;" id="innerHTML"></textarea><br />
+                <label>textContent</label>
+                <textarea style="width: 100%; height: 200px;" id="textContent"></textarea><br />
+                <label>innerText</label>
+                <textarea style="width: 100%; height: 200px;" id="innerText"></textarea>
+            <form>
+                <a type="submit" id="boutonSubmit">Envoyer</a>
+            </form>
         </article>
     </main>
     <footer>

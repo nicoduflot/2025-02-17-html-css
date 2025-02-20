@@ -410,3 +410,69 @@ forme de base
         console.log(`C'est cool ${name}, ${age} ans !`); 
     }
 )('Nicolas', 12);
+
+/* Manipulation du DOM */
+/*
+console.log(document.children);
+console.log(document.baseURI);
+*/
+
+/* 
+Attendre que la page soit chargée 
+
+Le navigateur renvoie au moteur qui interprète Javascript l'événement DOMContentLoaded
+
+En surveillant la fenêtre du navigateur sur cet événement, on peut lancer une callback qui contiendra tous les scripts d'interaction avec l'utilisateur sur la page
+*/
+
+window.addEventListener('DOMContentLoaded', function(event){
+    console.log(event);
+    console.log('Le DOM est chargé');
+    /* On récupère des objets représentant les éléments de la page, ces objets ont tous les mêmes ttributs et les mêmes méthodes, seulement certains attributs ne sont pas renseignés et certaines méthode ne sont pas applicables car leur renseignement et assignation dépend de la nature de l'élément */
+    const boutonSubmit = document.getElementById('boutonSubmit');
+    console.log(boutonSubmit.childNodes);
+    /* 
+    il est possible de récupérer les éléments ou une collection d'élément selon : 
+    tagname (le nom de balise, un sélecteur CSS, etc.)
+    */
+
+    const pClassClickMe = document.getElementsByClassName('clickMe');
+    console.log(pClassClickMe);
+
+    const allPTagName = this.document.getElementsByTagName('p');
+    console.log(allPTagName);
+    for(data of allPTagName){
+        if(data.classList.contains('clickMe')){
+            console.log(data);
+        }
+    }
+
+    const pClassClickMeQ = document.querySelector('p.clickMe.active');
+    console.log(pClassClickMeQ);
+    
+    const allPQ = document.querySelectorAll('p');
+    console.log(allPQ);
+    allPQ.forEach(function(value, index, tab){
+        console.log(value, index, tab);
+        value.addEventListener('mouseenter', function(){
+            this.style.backgroundColor ='rgba(0,0,0,0.1)';
+            this.style.setProperty('font-weight', 'bold');
+        });
+        value.addEventListener('mouseleave', function(){
+            this.style.removeProperty('background-color');
+            this.style.fontWeight = 'normal';
+        });
+    });
+
+    pClassClickMeQ.addEventListener('click', function(){
+        this.classList.toggle('alert');
+        this.classList.toggle('alert-info');
+        console.log(this.innerHTML);
+        console.log(this.innerText);
+        console.log(this.textContent);
+        document.getElementById('innerHTML').textContent = this.innerHTML;
+        document.getElementById('textContent').textContent = this.textContent;
+        document.getElementById('innerText').textContent = this.innerText;
+    });
+    
+});
