@@ -4,13 +4,13 @@ function jsonToTable(data) {
         table = table + '<tr>';
         for (key in element) {
             //console.log(key);
-            if(typeof element[key] !== 'object'){
+            if (typeof element[key] !== 'object') {
                 table = table + `<td><b>${key}</b> : <br />${element[key]}</td>`;
-            }else{
+            } else {
                 const subElement = element[key];
                 table = table + `<td><b>${key}</b><br/>`;
-                for(subKey in subElement){
-                    if(typeof subElement[subKey] !== 'object'){
+                for (subKey in subElement) {
+                    if (typeof subElement[subKey] !== 'object') {
                         table = table + `<b>${subKey}</b> : ${subElement[subKey]}</br>`;
                     }
                 }
@@ -26,34 +26,34 @@ function jsonToTable(data) {
 function searchJsonToTable(data, term = '') {
     let table = '<table class="dark striped">';
     let line = '';
-    let termFound = (term === '')? true :false ;
+    let termFound = (term === '') ? true : false;
     for (element of data) {
         line + '<tr>';
         for (key in element) {
             //console.log(key);
-            if(typeof element[key] !== 'object'){
+            if (typeof element[key] !== 'object') {
                 line = line + `<td><b>${key}</b> : <br />`;
-                if( (element[key].toString().toLocaleLowerCase().indexOf(term) >= 0) && term !== ''){
+                if ((element[key].toString().toLocaleLowerCase().indexOf(term) >= 0) && term !== '') {
                     termFound = true;
                     line = line + '<mark>';
                 }
                 line = line + `${element[key]}`;
-                if( (element[key].toString().toLocaleLowerCase().indexOf(term) >= 0) && term !== ''){
+                if ((element[key].toString().toLocaleLowerCase().indexOf(term) >= 0) && term !== '') {
                     line = line + '</mark>';
                 }
                 line = line + '</td>';
-            }else{
+            } else {
                 const subElement = element[key];
                 line = line + `<td><b>${key}</b><br/>`;
-                for(subKey in subElement){
-                    if(typeof subElement[subKey] !== 'object'){
+                for (subKey in subElement) {
+                    if (typeof subElement[subKey] !== 'object') {
                         line = line + `<b>${subKey}</b> : </br>`;
-                        if( (subElement[subKey].toString().toLocaleLowerCase().indexOf(term) >= 0) && term !== ''){
+                        if ((subElement[subKey].toString().toLocaleLowerCase().indexOf(term) >= 0) && term !== '') {
                             termFound = true;
                             line = line + '<mark>';
                         }
                         line = line + `${subElement[subKey]}`;
-                        if( (subElement[subKey].toString().toLocaleLowerCase().indexOf(term) >= 0) && term !== ''){
+                        if ((subElement[subKey].toString().toLocaleLowerCase().indexOf(term) >= 0) && term !== '') {
                             line = line + '</mark>';
                         }
                         line = line + `<br />`;
@@ -63,18 +63,18 @@ function searchJsonToTable(data, term = '') {
             }
         }
         line = line + '</tr>';
-        if(termFound){
+        if (termFound) {
             table = table + line;
             termFound = false;
         }
         line = '';
-        termFound = (term === '')? true :false ;
+        termFound = (term === '') ? true : false;
     }
     table = table + '</table>';
     return table;
 }
 
-function errorFetch(message){
+function errorFetch(message) {
     return `
     <table>
         <tr>
@@ -86,6 +86,23 @@ function errorFetch(message){
         </tr>
     </table>
     `;
+}
+
+/**
+ * permet de faire un fetch vers une ressource et de lancer la fonction de traitement directement dans l'appel de la fonction
+ * @param {string} url 
+ * @param {*} callbackData 
+ */
+function getJSon(url, callbackData) {
+    fetch(url)
+        .then(reponse => reponse.json())
+        .then(data => {
+            callbackData(data);
+        }).catch(erreur => {
+            console.error(erreur);
+        }).finally(() => {
+            console.log('fin de la transaction');
+        });
 }
 
 window.addEventListener('DOMContentLoaded', function () {
@@ -113,8 +130,8 @@ window.addEventListener('DOMContentLoaded', function () {
 
     /* on lance le fetch à partir de 3 caractères dans l'input */
     const searchInput = document.querySelector('input[name="search"]');
-    searchInput.addEventListener('keyup', function(){
-        if(searchInput.value.length > 2){
+    searchInput.addEventListener('keyup', function () {
+        if (searchInput.value.length > 2) {
             fetch('./bdd.php')
                 .then(function (reponse) {
                     return reponse.json();
@@ -131,4 +148,29 @@ window.addEventListener('DOMContentLoaded', function () {
         }
     });
 
+    const result = document.getElementById('result');
+    result.addEventListener('click', function (event) {
+        console.log(event.target.parentNode);
+
+    });
+
+    /* créer un élément dans le DOM */
+    const buttonText = document.createElement('button');
+    const textNode = this.document.createTextNode('toto');
+    buttonText.append(textNode);
+    this.document.getElementById('toto').append(buttonText);
+
+    function addJson(data) {
+        const affData = document.querySelector('#myJson');
+        let dataText = '';
+        data.forEach(element => {
+            for (key in element) {
+                dataText = dataText + `${key} : ${element[key]}, `;
+            }
+            dataText = dataText + '\n';
+        });
+        affData.innerText = dataText;
+    }
+
+    /*getJSon('./bdd.php', addJson);*/
 });

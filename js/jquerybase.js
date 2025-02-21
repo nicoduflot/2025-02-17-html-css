@@ -29,16 +29,18 @@ jQuery(function($){
 
     let cptClic = 0;
     let cptClicSpecial = 0;
+    $('#reactiveCptClick').on('click', function(){
+        $('p:not(.special)').on('click', function(){
+            cptClic = cptClic + 1;
+            console.log(`cptClic : ${cptClic}`);
+        })
+        
+        $('p.special').on('click', function(){
+            cptClicSpecial = cptClicSpecial + 1;
+            console.log(`cptClicSpecial : ${cptClicSpecial}`);
+        })        
+    });
 
-    $('p:not(.special)').on('click', function(){
-        //cptClic = cptClic + 1;
-        //console.log(`cptClic : ${cptClic}`);
-    })
-    
-    $('p.special').on('click', function(){
-        //cptClicSpecial = cptClicSpecial + 1;
-        //console.log(`cptClicSpecial : ${cptClicSpecial}`);
-    })
 
     $('.divLettreCercle').first().on('click', function(){
         console.log('Div A');
@@ -135,5 +137,52 @@ jQuery(function($){
         */
         $('html').animate({scrollTop: $(document).height()}, 1000);
     });
+
+    $('#tableGenerate tbody').append('<tr><td class="cl01">Res 01</td><td class="cl02">Res 02</td></tr>');
+    /*
+    $('#tableGenerate tbody td').on('click', function(event){
+        console.log('clic td tbody sans délégation');
+        console.log(event);
+    });
+    const tdClick = $('#tableGenerate tbody td');
+    console.log(tdClick);
+    */
+    $('#activeClickTdDelegue').on('click', function(){
+        $('#tableGenerate tbody').on('click', 'td', function(){
+            console.log($(this).text());
+        });
+    });
+
+    $('#nameSpace').on('click.nom', function(){
+        console.log('namespace click.nom');
+    });
+    
+    $('#nameSpace').on('click.prenom', function(){
+        console.log('namespace click.prenom');
+    });
+
+    //$('#nameSpace').trigger('click.prenom');
+
+    $('#nspNom').on('click', function(){
+        $('#nameSpace').trigger('click.nom');
+    });
+    
+    $('#nspPrenom').on('click', function(){
+        $('#nameSpace').trigger('click.prenom');
+    });
+
+    /* annuler un écouteur d'événement */
+    $('#annuleCptClick').on('click', function(){
+        $('p').off('click');
+    });
+
+    $('#reactiveCptClick').trigger('click');
+    
+    /* annuler un événement délégué */
+    $('#annuleClickTdDelegue').on('click', function(){
+        $('#tableGenerate tbody').off('click', 'td');
+    });
+    
+    $('#activeClickTdDelegue').trigger('click');
 
 });
