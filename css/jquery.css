@@ -11,3 +11,19 @@
     align-items: center;
     cursor: pointer;
 }
+
+.blocAnimate{
+    width: 50px;
+    height: 50px;
+    background-color: crimson;
+    border: 1px solid black;
+    margin: 2px;
+}
+
+.threeStates{
+    width: 200px;
+    height: 50px;
+    background-color: crimson;
+    border: 1px solid black;
+    margin: 2px;
+}

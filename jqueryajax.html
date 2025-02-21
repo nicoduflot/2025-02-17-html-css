@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Formation HTML5 CSS3 - Javascript - JQUERY" />
+    <title>Formation HTML5 CSS3 - Javascript - JQUERY</title>
+    <!-- Partie des liens vers le CSS et les fichiers scripts js ou jquery  -->
+    <link rel="stylesheet" href="./css/style.css" />
+    <link rel="stylesheet" href="./css/formulaire.css" />
+    <link rel="stylesheet" href="./css/jquery.css" />
+    <script src="./js/jquery-3.7.1.js"></script>
+    <script src="./js/jqueryajax.js"></script>
+</head>
+
+<body>
+    <header>
+        <div class="container">
+            <h1>Formation HTML5 CSS3 - Javascript - JQUERY</h1>
+        </div>
+    </header>
+    <nav role="navigation">
+        <div class="container">
+            <ul>
+                <li><a href="./index.html">Introduction</a></li>
+                <li><a href="./formulaire.html">Formulaire</a></li>
+                <li><a href="./cssgrid.html">Grilles CSS</a></li>
+                <li><a href="./jsbase.html">JS bases</a></li>
+                <li><a href="./jsajax.html">JS Ajax</a></li>
+                <li><a href="./jquerybase.html">JQuery bases</a></li>
+                <li><a href="./jquerycss.html">JQuery CSS</a></li>
+                <li><a href="./jqueryajax.html">Jquery Ajax</a></li>
+            </ul>
+        </div>
+    </nav>
+    <main class="container">
+        <section>
+            <article>
+                <h2>Ajax avec JQuery</h2>
+                <pre>
+jQuery( function($){
+    $.ajax();
+});
+                </pre>
+                <p>
+                    La fonction ajax() de JQuery contient les tests de compatibilité 
+                    pour instancier XHR
+                </p>
+                <p>
+                    Lors de ces appels, il faut utiliser des paramètres, tel l'url de la source, 
+                    la méthode (get pour récupérer les données, post pour en envoyer), etc.
+                </p>
+            </article>
+            <article>
+                <h2>Utiliser $.ajax()</h2>
+                <button id="showAllPosts">
+                    Tous les posts
+                </button>
+                <div id="allPosts">
+
+                </div>
+            </article>
+        </section>
+        <section>
+            <article>
+                <h2>.get() et .post()</h2>
+                <p>
+                    Les fonctions .get() et .post() sont des raccourcis de $.ajax(), 
+                    elles utilisent donc soit GET ou POST.
+                    Elle recquiers des argument comme la fonction $.ajax()
+                </p>
+            </article>
+            <article>
+                <h2>Afficher les users avec .get()</h2>
+                <button id="showAllUsers">
+                    Tous les posts
+                </button>
+                <div id="allUsers">
+
+                </div>
+            </article>
+        </section>
+        <section>
+            <article>
+                <h2>XML - RSS</h2>
+                <button id="GetRss">
+                    Get Rss
+                </button>
+                <div id="showRss">
+
+                </div>
+            </article>
+        </section>
+    </main>
+    <footer>
+        <div class="container">
+            <p>&copy; DAWAN - Feb 2025</p>
+        </div>
+    </footer>
+</body>
+
+</html>
