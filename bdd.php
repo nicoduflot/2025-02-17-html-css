@@ -12,13 +12,9 @@ if(count($_GET) === 0){
         " FROM ".
         "   `jeux_video` ";
 }else{
-    //echo '<pre>';
-    //var_dump($_GET);
-    //echo '</pre>';
     $where = ' WHERE ';
     $cpt = 1;
     foreach($_GET as $key => $value){
-        //echo $key. '=>'. $value. '<br />';
         if(is_numeric($value)){
             $where = $where . ' ' .$key .' = '. $value;
         }else{
@@ -33,7 +29,6 @@ if(count($_GET) === 0){
         " * ".
         " FROM ".
         "   `jeux_video` ".$where;
-    //echo $sql.'<br />';
 }
 
 

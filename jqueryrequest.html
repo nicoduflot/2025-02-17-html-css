@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="fr">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,6 +10,7 @@
     <script src="./js/bootstrap.js"></script>
     <script src="./js/appli.js"></script>
 </head>
+
 <body>
     <header>
         <div class="container">
@@ -28,10 +30,57 @@
         </div>
     </nav>
     <main class="container">
-        <section id="recherche">
-
-        </section>
-        <section id="resultats" class="table-responsive">
+        <form class="p-2">
+            <section id="recherche" class="row mb-3 border border-dark-subtle p-1 rounded">
+                <div class="col-lg-4">
+                    <div class="p-1">
+                        <div>
+                            <p>
+                                <label for="nomJeu" class="form-label">Nom du jeu contient :</label>
+                                <input type="text" class="form-control" id="nomJeu" name="nom" />
+                            </p>
+                            <p>
+                                <label for="possesseur" class="form-label">possesseur contient :</label>
+                                <input type="text" class="form-control" id="possesseur" name="possesseur" />
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                    <div class="p-1">
+                        <div>
+                            <p>
+                                <label for="console" class="form-label">console contient :</label>
+                                <input type="text" class="form-control" id="console" name="console" />
+                            </p>
+                            <p>
+                                <label for="prix" class="form-label">prix est de :</label>
+                                <input type="number" min="0" class="form-control" id="prix" name="prix" />
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                    <div class="p-1">
+                        <div >
+                            <p>
+                                <label for="nbre_joueurs_max" class="form-label">nbre_joueurs_max est :</label>
+                                <input type="number" min="0" class="form-control" id="nbre_joueurs_max" name="nbre_joueurs_max" />
+                            </p>
+                            <p>
+                                <label for="commentaires" class="form-label">commentaires contient :</label>
+                                <input type="text" class="form-control" id="commentaires" name="commentaires" />
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <button type="button" class="btn btn-success btn-sm" id="searchGames">Rechercher</button>
+                    <button type="reset" class="btn btn-secondary btn-sm">Effacer le formulaire</button>
+                </div>
+            </section>
+        </form>
+        <section id="resultats" class="table-responsive" style="height: 400px; overflow: auto;">
 
         </section>
     </main>
@@ -41,4 +90,5 @@
         </div>
     </footer>
 </body>
+
 </html>
