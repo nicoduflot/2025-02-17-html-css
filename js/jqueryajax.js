@@ -61,19 +61,73 @@ jQuery( function($){
             dataType: 'json'
         })
         .done(function(data){
-            console.log('connexion établie, réception des données');
-            console.log(data);
+            /*console.log('connexion établie, réception des données');*/
+            /*console.log(data);*/
             $('#allPosts').html(searchJsonToTable(data));
         })
         .fail(function(erreur){
-            $('#alertRessources').html(erreur.responseText);
+            console.log('erreur', erreur);
+            
+            $('#allPosts').html(erreur.responseText);
         })
         .always(function(){
             console.log('Requête vers la source terminée');
-            
+        });
+    });
+    
+    $('#showARSS').on('click', function(){
+        console.log('clic rss');
+        $.ajax({
+            url: 'https://rss.nytimes.com/services/xml/rss/nyt/Books/Review.xml',
+            dataType: 'html',
+            type: 'GET',
+            success: function(data){
+                /*
+                console.log('connexion établie, réception des données');
+                */
+                $('#RSS').text(data);
+            }
+        })
+        .fail(function(erreur){
+            $('#RSS').html('Problème avec le flux RSS');
+        })
+        .always(function(){
+            console.log('Requête vers la source terminée');
         });
     });
 
     /* utilisation de .get() */
-    
+    $('#showAllUsers').on('click', function(){
+        $.get(
+            './ressources/users.json',
+            'json',
+            function(data){
+                $('#allUsers').html(searchJsonToTable(data));
+            }
+        )
+        .fail(function(erreur){
+            $('#allUsers').html(erreur.responseText);
+        })
+        .always(function(){
+            console.log('reuête terminée');
+        });
+    });
+
+    $('#getRss').on('click', function(){
+        $.get(
+            'https://rss.nytimes.com/services/xml/rss/nyt/Books/Review.xml',
+            function(data){
+                $('#showRss').text(data);
+            },
+            'html',
+        )
+        .fail(function(erreur){
+            $('#showRss').html(erreur.responseText);
+        })
+        .always(function(){
+            console.log('reuête terminée');
+        });
+    });
+
+
 });

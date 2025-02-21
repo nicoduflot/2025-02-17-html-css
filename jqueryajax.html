@@ -61,13 +61,20 @@ jQuery( function($){
         <section>
             <article>
                 <h2>Utiliser $.ajax()</h2>
+                <h3>Du json</h3>
                 <button id="showAllPosts">
                     Tous les posts
                 </button>
-                <div id="alertRessources"></div>
-                <div id="allPosts" class="table-rwd">
+                <div id="allPosts" class="table-rwd"  style="height: 200px;overflow: auto;"">
 
                 </div>
+                <h3>Du RSS</h3>
+                <button id="showARSS">
+                    RSS
+                </button>
+                <pre id="RSS" class="table-rwd" style="height: 200px;overflow: auto;">
+
+                </pre>
             </article>
         </section>
         <section>
@@ -79,12 +86,14 @@ jQuery( function($){
                     Elle recquiers des argument comme la fonction $.ajax()
                 </p>
             </article>
+        </section>
+        <section>
             <article>
                 <h2>Afficher les users avec .get()</h2>
                 <button id="showAllUsers">
                     Tous les posts
                 </button>
-                <div id="allUsers">
+                <div id="allUsers" style="height: 200px;overflow: auto;">
 
                 </div>
             </article>
@@ -92,12 +101,12 @@ jQuery( function($){
         <section>
             <article>
                 <h2>XML - RSS</h2>
-                <button id="GetRss">
+                <button id="getRss">
                     Get Rss
                 </button>
-                <div id="showRss">
+                <pre id="showRss" style="height: 200px;overflow: auto;">
 
-                </div>
+                </pre>
             </article>
         </section>
     </main>
